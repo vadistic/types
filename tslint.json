@@ -1,6 +1,7 @@
 {
-  "extends": "dtslint/dtslint.json",
+  "extends": "dtslint/dtslint.json, tslint-config-prettier",
   "rules": {
-    "semicolon": false
+    // declaring module allow overwirting vendor typings without additional setup
+    "no-single-declare-module": false
   }
 }

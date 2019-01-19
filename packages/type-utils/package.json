@@ -1,8 +1,9 @@
 {
-  "name": "util-types",
+  "name": "type-utils",
   "version": "0.1.0",
-  "description": "My private typescript utility types",
-  "repository": "https://github.com/vadistic/types/packages/package_name",
+  "description": "Utility typescript types",
+  "repository": "https://github.com/vadistic/types",
+  "homepage": "https://github.com/vadistic/types#readme",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "license": "MIT",
   "main": "index.d.ts",

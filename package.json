@@ -4,18 +4,25 @@
   "description": "Experimenting with monorepo to centralise reapetable typescript typings",
   "repository": "https://github.com/vadistic/types",
   "author": "Jakub Wadas <vadistic@gmail.com>",
+  "homepage": "https://github.com/vadistic/types#readme",
   "license": "MIT",
   "main": "n/a",
   "private": true,
+  "scripts": {
+    "sync": "ts-node ./scripts/sync.ts"
+  },
   "workspaces": [
     "packages/*"
   ],
   "devDependencies": {
     "@types/jsonfile": "^5.0.0",
+    "@types/semver": "^5.5.0",
     "@types/yargs": "^12.0.5",
     "dtslint": "^0.4.2",
     "gitpkg": "^1.0.0-beta.1",
     "jsonfile": "^5.0.0",
+    "lerna": "^3.10.6",
+    "semver-utils": "^1.1.4",
     "ts-node": "^7.0.1",
     "yargs": "^12.0.5"
   }

@@ -1,0 +1,19 @@
+{
+  "name": "@types/package_name",
+  "version": "0.1.0",
+  "description": "My typescript definitions for `package_name` package",
+  "repository": "https://github.com/vadistic/types/packages/package_name",
+  "homepage": "https://github.com/vadistic/types/tree/master/packages/package_name#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "sync": "ts-node ../../scripts/sync",
+    "bump": "ts-node ../../scripts/bump",
+    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+  },
+  "private": false,
+  "peerDependencies": {},
+  "devDependencies": {}
+}
