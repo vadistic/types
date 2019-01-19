@@ -1,0 +1,28 @@
+{
+  "name": "type-upgrade",
+  "version": "0.1.1",
+  "description": "Bin script for updating typings",
+  "repository": "https://github.com/vadistic/types",
+  "homepage": "https://github.com/vadistic/types#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "cli.ts",
+  "private": false,
+  "bin": {
+    "type-upgrade": "./type-upgrade.ts"
+  },
+  "scripts": {
+    "type-upgrade": "ts-node ./type-upgrade",
+    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.10.0",
+    "jsonfile": "^5.0.0",
+    "semver": "^5.6.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/jsonfile": "^5.0.0"
+  }
+}
