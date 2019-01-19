@@ -26,6 +26,8 @@ export default (async () => {
       pkg.version = coercedSemver.version + '-0'
     }
 
-    json.writeFile('./package.json', pkg, { spaces: 2 })
+    json.writeFileSync(path.resolve('./package.json'), pkg, {
+      spaces: 2,
+    })
   }
 })()
