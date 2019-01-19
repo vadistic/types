@@ -1,0 +1,14 @@
+{
+  "name": "util-types",
+  "version": "0.1.0",
+  "description": "My private typescript utility types",
+  "repository": "https://github.com/vadistic/types/packages/package_name",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "private": false,
+  "peerDependencies": {
+    "typescript": ">= 3.0.0"
+  }
+}

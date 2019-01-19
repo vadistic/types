@@ -1,0 +1,14 @@
+{
+  "name": "@types/package_name",
+  "version": "0.1.0",
+  "description": "Private typings for package_name",
+  "repository": "https://github.com/vadistic/types/packages/package_name",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "private": false,
+  "peerDependencies": {
+    "typescript": "3.2.4"
+  }
+}

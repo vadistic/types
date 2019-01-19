@@ -1,0 +1,25 @@
+{
+  "name": "@types/gatsby",
+  "version": "0.1.0",
+  "description": "Private typings for gastby",
+  "repository": "https://github.com/vadistic/types/packages/gatsby",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "private": false,
+  "peerDependencies": {
+    "gatsby": "^2.0.91",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "typescript": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "gatsby": "^2.0.91",
+    "react": "^16.8.0-alpha.1",
+    "react-dom": "^16.8.0-alpha.1",
+    "typescript": "^3.2.4"
+  }
+}
