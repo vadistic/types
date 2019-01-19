@@ -5,6 +5,7 @@ import * as semver from 'semver'
 import * as json from 'jsonfile'
 import * as path from 'path'
 import { exec } from 'child_process'
+import { exists } from 'fs'
 
 const OWNER = 'vadistic'
 const REPO = 'types'
@@ -28,8 +29,8 @@ export default (async () => {
       Commands:
       outdated
 
-      Shows outdated typings
-      $ type-upgrade outdates
+      List outdated typings
+      $ type-upgrade outdated
 
       upgrade
 
@@ -119,8 +120,13 @@ export default (async () => {
             .map(entry => `${GIT_URL}/${OWNER}/${REPO}#${entry.tag}`)
             .join(' ')}`,
           (error, stdout, stderr) => {
-            if (error || stderr) {
-              throw new Error(`Error while upgrading :(\n\n ${error || stderr}`)
+            // ignore stderr because yarn warnings trigger it
+            if (error) {
+              console.error(`Error while upgrading :()`)
+              console.error(error.name, error.message)
+              console.error(error.code)
+              console.error(error.stack)
+              process.exit(1)
             }
 
             console.log(stdout)

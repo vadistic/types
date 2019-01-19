@@ -1,6 +1,6 @@
 {
   "name": "@types/gatsby",
-  "version": "2.0.91-0",
+  "version": "2.0.91-2",
   "description": "My typescript definitions for `gatsby` package",
   "repository": "https://github.com/vadistic/types/packages/gatsby",
   "homepage": "https://github.com/vadistic/types/tree/master/packages/gatsby#readme",

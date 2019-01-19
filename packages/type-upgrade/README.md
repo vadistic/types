@@ -9,10 +9,10 @@ Upgrade script from vadistic/types (making up for lack of yarn support)
 # outdated
 
 # Shows outdated typings
-$ type-up outdates
+$ type-upgrade outdated
 
 # upgrade
 
 # Install latest typings
-$ type-up upgrade
+$ type-upgrade upgrade
 ```
