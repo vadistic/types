@@ -4,21 +4,19 @@
 
 ## Why
 
-TypeScript ecosystem is great and all, but there are small issues I wanted to fix:
-
 - Typings PRs can take long time to be accepted and you should not push to DefinitelyTyped if package provide own types
-- Sometime you just want some typings that probably should not become official API (breaking changes, crazy generics, preferences...)
-- Local declarations lack reusability and version control if you want to share across multiple projects.
-- Maitaining fork just for some typings fix is a madness
-- Publishing every crapy bit of code to npm just to use it as package seems like disservice to community
+- Sometime you just want some typings that probably should not become official API (breaking changes, weird preferences, crazy generics...)
+- Local declarations lack reusability and version control for sharing across porojects
+- Fork just for some typings fix is hard to maintain
+- Publishing every random bit of code to npm just to install it as package is disservice to the community
 
-**Solution:** Create private DefinitelyTyped!
+**Solution:** Create private, git-powered DefinitelyTyped!
 
 ## Package management
 
 With lerna, yarn workspaces, dtslint and few scripts I can have standarised infrastructure for reusing typing packages as I want.
 
-Since [yarn does not allow installing from git subdirectories](https://github.com/yarnpkg/yarn/issues/4725) - I'm using [gitpkg](https://github.com/ramasilveyra/gitpkg) to deploy packages as git tags. Each release has it's separate new tag/ version - just like npm.
+Since [yarn does not allow installing from git subdirectories](https://github.com/yarnpkg/yarn/issues/4725) - I'm using [gitpkg](https://github.com/ramasilveyra/gitpkg) to deploy packages as git tags. Each release has separate new tag & version - just like npm.
 
 ### Publishing
 
@@ -53,12 +51,12 @@ $ types-yarn upgrade
 
 Packages are named `@types/X` and get installed in `node_modules/@types` so it works exactly like DefinitelyTyped
 
-#### `declare module 'package_name'` vs `no-declare-single-module`
+#### `declare module 'package_name'` vs `no-declare-single-module` dtslint rule
 
-I've found declaring moduiles is the most straighforward way to disable original typings, if package provide one. Alternatives are tsconfig compiler option `types`, `typesRoots` or playing with `paths`.
+I've found declaring modules is the most straighforward way to disable original typings, if original package provide one. Alternatively I can use tsconfig compiler options `types`, `typesRoots` or play with `paths`.
 
 ## TODO
 
-[] `types-yarn add` to quickly install latest typings
-[] Generailise `types-yarn` to detect repo/owner
-[] Develop `types-util`
+[ ] `types-yarn add` to quickly install latest typings
+[ ] Generailise `types-yarn` to detect repo/owner
+[ ] Develop `types-util`
