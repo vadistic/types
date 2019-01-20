@@ -4,18 +4,78 @@ import * as Octokit from '@octokit/rest'
 import * as semver from 'semver'
 import * as json from 'jsonfile'
 import * as path from 'path'
-import { exec } from 'child_process'
-import { exists } from 'fs'
+import * as execa from 'execa'
 
 const OWNER = 'vadistic'
 const REPO = 'types'
 const GIT_URL = 'https://github.com'
 
+const DEBUG = false
+
+interface PackageInfo {
+  name: string
+  tag: string
+  version: string
+}
+
+const versionRegex = /(?!v)([0-9]+\.[0-9]+\.[0-9]+(-[0-z-.]+)?)(?=-gitpkg)/
+
+let tagsCache: Octokit.ReposListTagsResponseItem[]
+
+const listAvalibleVersions = async (pkgName: string) => {
+  // normalize name
+  const upstreamName = pkgName.replace('@types/', '')
+
+  DEBUG && console.log('listing versions for name: ', pkgName, upstreamName)
+  // matching both typex-x and util packages
+  const nameRegex = new RegExp(
+    `(types-)?${upstreamName}-v[0-9]\.[0-9]\.[0-9]-[0-9]+-gitpkg`,
+  )
+
+  const octokit = new Octokit()
+
+  // TODO: support pagination if I ever would reach 100 records
+  const tags =
+    tagsCache ||
+    (await octokit.repos.listTags({
+      owner: OWNER,
+      repo: REPO,
+      per_page: 100,
+      page: 0,
+    })).data
+
+  tagsCache = tags
+
+  const packagesList: PackageInfo[] = tags
+    .filter(tag => tag.name.match(nameRegex))
+    .map(tag => ({
+      name: pkgName,
+      tag: tag.name,
+      version: tag.name.match(versionRegex)![0],
+    }))
+
+  DEBUG && console.log('packagesList: ', packagesList)
+
+  return packagesList
+}
+
+const getLatestVersion = (packages: PackageInfo[], init?: PackageInfo) =>
+  packages.reduce(
+    (prev, current) =>
+      !prev || semver.gt(current.version, prev!.version) ? current : prev,
+    init as PackageInfo,
+  )
+
 export default (async () => {
-  let arg: 'upgrade' | 'outdated' | undefined
-  process.argv.forEach(argv => {
-    if (argv === 'upgrade' || argv === 'outdated') {
-      arg = argv
+  let arg: 'upgrade' | 'outdated' | 'list' | undefined
+  let searchName
+  process.argv.forEach(async (val, i, arr) => {
+    if (val === 'upgrade' || val === 'outdated') {
+      arg = val
+    }
+    if (val === 'list') {
+      arg = val
+      searchName = arr[i + 1]
     }
   })
 
@@ -27,6 +87,9 @@ export default (async () => {
       Usage:  -upgrade [command]
 
       Commands:
+      Check avalibility & latest version
+      $info package_name
+
       outdated
 
       List outdated typings
@@ -42,25 +105,34 @@ export default (async () => {
     process.exit()
   }
 
-  const octokit = new Octokit()
-  const pkg = await json.readFile(path.resolve(process.cwd(), 'package.json'))
+  if (arg === 'list' && searchName) {
+    const packagesList = await listAvalibleVersions(searchName)
 
-  const versionRegex = /(?!v)([0-9]+.[0-9]+.[0-9]+(-[0-z-.]+)?)(?=-gitpkg)/
+    if (packagesList.length === 0) {
+      console.log(`No packages found for name: ${searchName}`)
+    } else {
+      const latestVersion = getLatestVersion(packagesList)
+      console.log(`${searchName}: ${packagesList.length} versions found`)
+      console.log('Latest:\n', JSON.stringify(latestVersion, null, 2))
 
-  // TODO: support pagination if I ever would reach 100 records
-  const tags = await octokit.repos.listTags({
-    owner: OWNER,
-    repo: REPO,
-    per_page: 100,
-    page: 0,
-  })
+      console.log('\nInstall:')
+      console.log(`yarn add -D ${OWNER}/${REPO}/#${latestVersion.tag}`)
+    }
+
+    process.exit()
+    return 0
+  }
+
+  const pkg = json.readFileSync(path.resolve(process.cwd(), 'package.json'))
 
   const typings = Object.entries<string>({
     ...pkg.devDependencies,
     ...pkg.dependencies,
   }).filter(([name, repo]) => {
-    return repo.match(`${OWNER}/${REPO}`)
+    return repo.match(`${OWNER}/${REPO}#`)
   })
+
+  DEBUG && console.log('typings: ', typings)
 
   if (typings.length === 0) {
     console.log(`No git typings found`)
@@ -68,47 +140,33 @@ export default (async () => {
     return 0
   }
 
-  interface OutdatedItem {
-    name: string
-    tag: string
+  interface OutdatedPackageInfo extends PackageInfo {
     installedVersion: string
-    latestVersion: string
   }
 
-  let outdated = [] as OutdatedItem[]
+  let outdated = [] as OutdatedPackageInfo[]
 
-  typings.forEach(([name, repo]) => {
-    const upstreamName = name.replace('@types/', '')
-
+  typings.forEach(async ([name, repo]) => {
     const installedVersion = repo.match(versionRegex)![0]
 
-    const allVersions = tags.data
-      .filter(tag => {
-        const typesTags = tag.name.match(`types-${upstreamName}`)
-        const utilTags = tag.name.match(upstreamName)
-        return [...(typesTags ? typesTags : []), ...(utilTags ? utilTags : [])]
-      })
-      .map(tag => tag.name)
+    const packagesList = await listAvalibleVersions(name)
 
-    const latestVersionInfo = allVersions.reduce(
-      (prev, tag) => {
-        const version = tag.match(versionRegex)![0]
-        return semver.gt(version, prev.version) ? { version, tag } : prev
-      },
-      {
-        version: installedVersion,
-        tag: repo.replace(`${GIT_URL}/${OWNER}/${REPO}#`, ''),
-      },
-    )
+    const latestVersion = getLatestVersion(packagesList, {
+      version: installedVersion,
+      name,
+      tag: repo.replace(`${GIT_URL}/${OWNER}/${REPO}/#`, ''),
+    })
 
-    if (semver.gt(latestVersionInfo.version, installedVersion)) {
+    if (semver.gt(latestVersion.version, installedVersion)) {
       outdated.push({
-        name: upstreamName,
-        tag: latestVersionInfo.tag,
-        installedVersion: installedVersion,
-        latestVersion: latestVersionInfo.version,
+        name,
+        tag: latestVersion.tag,
+        installedVersion,
+        version: latestVersion.version,
       })
     }
+
+    DEBUG && console.log('outdated: ', outdated)
 
     if (outdated.length === 0) {
       console.log(`Everything's up to date!`)
@@ -116,7 +174,7 @@ export default (async () => {
       console.log(`Found outdated typings packages`)
       outdated.forEach(entry => {
         console.log(
-          `${entry.name}: ${entry.installedVersion} => ${entry.latestVersion}`,
+          `${entry.name}: ${entry.installedVersion} => ${entry.version}`,
         )
       })
 
@@ -124,21 +182,19 @@ export default (async () => {
         console.log('Installing...')
 
         const command = `yarn add -D ${outdated
-          .map(entry => `${GIT_URL}/${OWNER}/${REPO}#${entry.tag}`)
+          .map(entry => `${OWNER}/${REPO}#${entry.tag}`)
           .join(' ')}`
 
-        exec(command, {}, (error, stdout, stderr) => {
-          if (error || stderr) {
-            console.error(`Error while upgrading :()`)
-            console.error(error || stderr)
-          }
+        const cmd = execa.shell(command)
 
-          console.log(stdout)
+        cmd.stdout.pipe(process.stdout)
+
+        cmd.then(() => {
+          console.log('Types updated!')
         })
       }
     }
 
-    process.exit()
     return 0
   })
 })()
