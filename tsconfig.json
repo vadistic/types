@@ -12,6 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "jsx": "react",
-    "forceConsistentCasingInFileNames": true
-  }
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "exclude": ["node_modules"]
 }

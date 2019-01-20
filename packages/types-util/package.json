@@ -1,6 +1,6 @@
 {
   "name": "types-util",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Utility typescript types",
   "repository": "https://github.com/vadistic/types",
   "homepage": "https://github.com/vadistic/types#readme",
