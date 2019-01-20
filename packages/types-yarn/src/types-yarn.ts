@@ -12,7 +12,7 @@ const REPO = 'types'
 const GIT_URL = 'https://github.com'
 
 export default (async () => {
-  let arg
+  let arg: 'upgrade' | 'outdated' | undefined
   process.argv.forEach(argv => {
     if (argv === 'upgrade' || argv === 'outdated') {
       arg = argv
@@ -65,6 +65,7 @@ export default (async () => {
   if (typings.length === 0) {
     console.log(`No git typings found`)
     process.exit()
+    return 0
   }
 
   interface OutdatedItem {
@@ -82,7 +83,11 @@ export default (async () => {
     const installedVersion = repo.match(versionRegex)![0]
 
     const allVersions = tags.data
-      .filter(tag => tag.name.match(`types-${upstreamName}`))
+      .filter(tag => {
+        const typesTags = tag.name.match(`types-${upstreamName}`)
+        const utilTags = tag.name.match(upstreamName)
+        return [...(typesTags ? typesTags : []), ...(utilTags ? utilTags : [])]
+      })
       .map(tag => tag.name)
 
     const latestVersionInfo = allVersions.reduce(
@@ -115,26 +120,25 @@ export default (async () => {
         )
       })
 
-      if ((arg = 'upgrade')) {
+      if (arg === 'upgrade') {
         console.log('Installing...')
-        exec(
-          `yarn add -D ${outdated
-            .map(entry => `${GIT_URL}/${OWNER}/${REPO}#${entry.tag}`)
-            .join(' ')}`,
-          // ignore stderr because yarn warnings trigger it
-          (error, stdout, stderr) => {
-            if (error) {
-              console.error(`Error while upgrading :()`)
-              console.error(error.name, error.message)
-              console.error(error.code)
-              console.error(error.stack)
-              process.exit(1)
-            }
 
-            console.log(stdout)
-          },
-        )
+        const command = `yarn add -D ${outdated
+          .map(entry => `${GIT_URL}/${OWNER}/${REPO}#${entry.tag}`)
+          .join(' ')}`
+
+        exec(command, {}, (error, stdout, stderr) => {
+          if (error || stderr) {
+            console.error(`Error while upgrading :()`)
+            console.error(error || stderr)
+          }
+
+          console.log(stdout)
+        })
       }
     }
+
+    process.exit()
+    return 0
   })
 })()
