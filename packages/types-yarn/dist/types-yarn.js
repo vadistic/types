@@ -57,7 +57,7 @@ var OWNER = 'vadistic';
 var REPO = 'types';
 var GIT_URL = 'https://github.com';
 exports.default = (function () { return __awaiter(_this, void 0, void 0, function () {
-    var arg, octokit, pkg, versionRx, tags, typings, outdated;
+    var arg, octokit, pkg, versionRegex, tags, typings, outdated;
     return __generator(this, function (_a) {
         switch (_a.label) {
             case 0:
@@ -67,14 +67,14 @@ exports.default = (function () { return __awaiter(_this, void 0, void 0, functio
                     }
                 });
                 if (!arg) {
-                    console.log("\n      Upgrade script from vadistic/types (making up for lack of yarn support)\n\n      Usage:  type-upgrade [command]\n\n      Commands:\n      outdated\n\n      Shows outdated typings\n      $ type-upgrade outdates\n\n      upgrade\n\n      Install latest typings\n      $ type-upgrade upgrade\n      ");
+                    console.log("\n      Upgrade script from vadistic/types (making up for lack of yarn support)\n\n      Usage:  -upgrade [command]\n\n      Commands:\n      outdated\n\n      List outdated typings\n      $ type-upgrade outdated\n\n      upgrade\n\n      Install latest typings\n      $ type-upgrade upgrade\n      ");
                     process.exit();
                 }
                 octokit = new Octokit();
                 return [4 /*yield*/, json.readFile(path.resolve(process.cwd(), 'package.json'))];
             case 1:
                 pkg = _a.sent();
-                versionRx = /(?!v)([0-9]+.[0-9]+.[0-9]+(-[0-z-.]+)?)(?=-gitpkg)/;
+                versionRegex = /(?!v)([0-9]+.[0-9]+.[0-9]+(-[0-z-.]+)?)(?=-gitpkg)/;
                 return [4 /*yield*/, octokit.repos.listTags({
                         owner: OWNER,
                         repo: REPO,
@@ -94,25 +94,24 @@ exports.default = (function () { return __awaiter(_this, void 0, void 0, functio
                 outdated = [];
                 typings.forEach(function (_a) {
                     var name = _a[0], repo = _a[1];
-                    var pkgName = name.replace('@types/', '');
-                    var currentVersion = repo.match(versionRx)[0];
-                    // TODO: support those @smth/smth
+                    var upstreamName = name.replace('@types/', '');
+                    var installedVersion = repo.match(versionRegex)[0];
                     var allVersions = tags.data
-                        .filter(function (tag) { return tag.name.match("types-" + pkgName); })
+                        .filter(function (tag) { return tag.name.match("types-" + upstreamName); })
                         .map(function (tag) { return tag.name; });
-                    var latestVersion = allVersions.reduce(function (prev, tag) {
-                        var version = tag.match(versionRx)[0];
+                    var latestVersionInfo = allVersions.reduce(function (prev, tag) {
+                        var version = tag.match(versionRegex)[0];
                         return semver.gt(version, prev.version) ? { version: version, tag: tag } : prev;
                     }, {
-                        version: currentVersion,
+                        version: installedVersion,
                         tag: repo.replace(GIT_URL + "/" + OWNER + "/" + REPO + "#", ''),
                     });
-                    if (semver.gt(latestVersion.version, currentVersion)) {
+                    if (semver.gt(latestVersionInfo.version, installedVersion)) {
                         outdated.push({
-                            name: pkgName,
-                            tag: latestVersion.tag,
-                            currentVersion: currentVersion,
-                            latestVersion: latestVersion.version,
+                            name: upstreamName,
+                            tag: latestVersionInfo.tag,
+                            installedVersion: installedVersion,
+                            latestVersion: latestVersionInfo.version,
                         });
                     }
                     if (outdated.length === 0) {
@@ -121,14 +120,21 @@ exports.default = (function () { return __awaiter(_this, void 0, void 0, functio
                     else {
                         console.log("Found outdated typings packages");
                         outdated.forEach(function (entry) {
-                            console.log(entry.name + ": " + entry.currentVersion + " => " + entry.latestVersion);
+                            console.log(entry.name + ": " + entry.installedVersion + " => " + entry.latestVersion);
                         });
                         if ((arg = 'upgrade')) {
+                            console.log('Installing...');
                             child_process_1.exec("yarn add -D " + outdated
                                 .map(function (entry) { return GIT_URL + "/" + OWNER + "/" + REPO + "#" + entry.tag; })
-                                .join(' '), function (error, stdout, stderr) {
-                                if (error || stderr) {
-                                    throw new Error("Error while upgrading :(\n\n " + (error || stderr));
+                                .join(' '), 
+                            // ignore stderr because yarn warnings trigger it
+                            function (error, stdout, stderr) {
+                                if (error) {
+                                    console.error("Error while upgrading :()");
+                                    console.error(error.name, error.message);
+                                    console.error(error.code);
+                                    console.error(error.stack);
+                                    process.exit(1);
                                 }
                                 console.log(stdout);
                             });

@@ -1,7 +1,7 @@
 {
   "name": "types",
   "version": "0.1.0",
-  "description": "Experimenting with monorepo to centralise reapetable typescript typings",
+  "description": "Monorepo experiment for git-powered typescript definitions sharing",
   "repository": "https://github.com/vadistic/types",
   "author": "Jakub Wadas <vadistic@gmail.com>",
   "homepage": "https://github.com/vadistic/types#readme",
@@ -19,8 +19,22 @@
     "@types/semver": "^5.5.0",
     "dtslint": "^0.4.2",
     "gitpkg": "^1.0.0-beta.1",
+    "husky": "^1.3.1",
     "jsonfile": "^5.0.0",
     "lerna": "^3.10.6",
+    "lint-staged": "^8.1.0",
     "ts-node": "^7.0.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "prettier --write",
+      "tslint -p 'tslint.json' --fix",
+      "git add"
+    ]
   }
 }
