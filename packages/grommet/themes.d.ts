@@ -2,8 +2,8 @@
 
 declare module 'grommet/themes' {
   import { base as iconBase } from 'grommet-icons/themes'
-  export const grommet: object
-  export const dark: object
+  const grommet: object
+  const dark: object
 
   type IconBase = typeof iconBase
 
@@ -33,7 +33,7 @@ declare module 'grommet/themes' {
     white: string
   }
 
-  export type Colors = typeof colors & {
+  type Colors = typeof colors & {
     'accent-1': string
     'accent-2': string
     'accent-3': string
@@ -62,10 +62,10 @@ declare module 'grommet/themes' {
     'status-disabled': string
   }
 
-  const generate: (
+  function generate (
     baseSpacing?: number,
     scale?: number,
-  ) => IconBase & {
+  ): IconBase & {
     global: {
       animation: {
         duration: string
@@ -816,7 +816,7 @@ declare module 'grommet/themes' {
     }
   }
 
-  export const base: IconBase & {
+  const base: IconBase & {
     global: {
       animation: {
         duration: string

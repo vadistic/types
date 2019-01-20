@@ -2,10 +2,10 @@
 import * as React from 'react'
 
 import {
-  CssAndIntristicProps,
-  Theme,
-  EdgeSizeValue,
   AlignSelfValue,
+  CssAndIntristicProps,
+  EdgeSizeValue,
+  Theme,
 } from '../shared'
 
 export interface ButtonProps<T = Theme> {

@@ -1,14 +1,14 @@
 import * as React from 'react'
 
 import {
-  CssAndIntristicProps,
-  Theme,
-  EdgeSizeValue,
-  ColorValue,
   AlignSelfValue,
+  ColorValue,
+  CssAndIntristicProps,
+  EdgeSizeValue,
+  Theme,
 } from '../shared'
 
-type TextSize<T = Theme> = keyof T['text']
+export type TextSize<T = Theme> = keyof T['text']
 
 export interface TextProps<T = Theme> {
   a11yTitle?: string

@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { Theme, EdgeSizeValue, ColorValue, AlignSelfValue } from '../shared'
+import { AlignSelfValue, ColorValue, EdgeSizeValue, Theme } from '../shared'
 import { TextSize } from './Text'
 
 export interface AnchorProps<T = Theme> {

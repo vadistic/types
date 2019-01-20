@@ -1,7 +1,7 @@
 // TypeScript Version: 3.0
 
-import { Omit, FilterObjectKeys } from 'types-util'
 import { FlattenInterpolation, ThemedStyledProps } from 'styled-components'
+import { FilterObjectKeys, Omit } from 'types-util'
 
 import { base } from 'grommet/themes'
 
@@ -22,7 +22,7 @@ export type CssAndIntristicProps<
 export type Theme = typeof base
 
 // Themable type values
-type ColorNames<T = Theme> = FilterObjectKeys<Theme['global']['colors'], string>
+export type ColorNames<T = Theme> = FilterObjectKeys<Theme['global']['colors'], string>
 
 export type ColorValue<T = Theme> =
   | ColorNames<T>

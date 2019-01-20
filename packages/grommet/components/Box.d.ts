@@ -1,21 +1,19 @@
 import * as React from 'react'
 
 import {
-  Theme,
-  CssAndIntristicProps,
+  AlignSelfValue,
+  BorderSizeValue,
   ColorValue,
-  SizeValue,
+  CssAndIntristicProps,
   EdgeSizeValue,
   ElevationValue,
-  BorderSizeValue,
-  AlignSelfValue,
+  SizeValue,
+  Theme,
 } from '../shared'
 
-// round as edge Size + ROUND_MAP (full: 100%)
+export type BoxRoundSizeValue<T> = EdgeSizeValue<T> | boolean | 'full'
 
-type BoxRoundSizeValue<T> = EdgeSizeValue<T> | boolean | 'full'
-
-type BoxAnimationType =
+export type BoxAnimationType =
   | 'fadeIn'
   | 'fadeOut'
   | 'jiggle'
@@ -27,7 +25,7 @@ type BoxAnimationType =
   | 'zoomIn'
   | 'zoomOut'
 
-type BoxAnimation =
+export type BoxAnimation =
   | BoxAnimationType
   | {
       type?: BoxAnimationType
@@ -36,7 +34,7 @@ type BoxAnimation =
       size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
     }
 
-type BoxBasisValue =
+export type BoxBasisValue =
   | 'xxsmall'
   | 'xsmall'
   | 'small'
@@ -53,7 +51,7 @@ type BoxBasisValue =
   | 'auto'
   | string
 
-type BoxBorderSideValue =
+export type BoxBorderSideValue =
   | boolean
   | 'top'
   | 'left'
@@ -63,7 +61,7 @@ type BoxBorderSideValue =
   | 'vertical'
   | 'all'
 
-type BoxBorderStyleValue =
+export type BoxBorderStyleValue =
   | 'solid'
   | 'dashed'
   | 'dotted'
@@ -74,7 +72,7 @@ type BoxBorderStyleValue =
   | 'outset'
   | 'hidden'
 
-type BoxOverflowValue = 'auto' | 'hidden' | 'scroll' | 'visible'
+export type BoxOverflowValue = 'auto' | 'hidden' | 'scroll' | 'visible'
 
 export interface BoxProps<T = Theme> {
   a11yTitle?: string

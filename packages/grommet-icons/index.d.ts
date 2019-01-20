@@ -13,563 +13,563 @@ declare module 'grommet-icons' {
     ? keyof Theme['icon']['size']
     : string
 
-  export interface IconProps<Theme = object> {
+  interface IconProps<Theme = object> {
     a11yTitle?: string
     size?: IconSizeProp<Theme>
     color?: ColorProp<Theme>
   }
 
-  export type Icon<Theme = object> = React.ComponentType<
+  type Icon<Theme = object> = React.ComponentType<
     IconProps<Theme> & JSX.IntrinsicElements['svg']
   >
 
-  export const Accessibility: Icon
-  export const Achievement: Icon
-  export const Action: Icon
-  export const Actions: Icon
-  export const Ad: Icon
-  export const Add: Icon
-  export const AddCircle: Icon
-  export const Aed: Icon
-  export const Aggregate: Icon
-  export const Aid: Icon
-  export const AidOption: Icon
-  export const Alarm: Icon
-  export const Alert: Icon
-  export const Amazon: Icon
-  export const Amex: Icon
-  export const Analytics: Icon
-  export const Anchor: Icon
-  export const Android: Icon
-  export const Announce: Icon
-  export const Apple: Icon
-  export const Apps: Icon
-  export const Archive: Icon
-  export const Archlinux: Icon
-  export const Article: Icon
-  export const Aruba: Icon
-  export const Ascend: Icon
-  export const AssistListening: Icon
-  export const Atm: Icon
-  export const Attachment: Icon
-  export const Attraction: Icon
-  export const Baby: Icon
-  export const BackTen: Icon
-  export const Bar: Icon
-  export const BarChart: Icon
-  export const Basket: Icon
-  export const Bike: Icon
-  export const Bitcoin: Icon
-  export const Blank: Icon
-  export const BlockQuote: Icon
-  export const Blog: Icon
-  export const Bluetooth: Icon
-  export const Bold: Icon
-  export const Book: Icon
-  export const Bookmark: Icon
-  export const BottomCorner: Icon
-  export const Braille: Icon
-  export const Briefcase: Icon
-  export const Brush: Icon
-  export const Bug: Icon
-  export const Bundle: Icon
-  export const Bus: Icon
-  export const BusinessService: Icon
-  export const Cafeteria: Icon
-  export const Calculator: Icon
-  export const Calendar: Icon
-  export const Camera: Icon
-  export const Capacity: Icon
-  export const Car: Icon
-  export const CaretDown: Icon
-  export const CaretNext: Icon
-  export const CaretPrevious: Icon
-  export const CaretUp: Icon
-  export const Cart: Icon
-  export const Catalog: Icon
-  export const CatalogOption: Icon
-  export const Centos: Icon
-  export const Channel: Icon
-  export const ChapterAdd: Icon
-  export const ChapterNext: Icon
-  export const ChapterPrevious: Icon
-  export const Chat: Icon
-  export const ChatOption: Icon
-  export const Checkbox: Icon
-  export const CheckboxSelected: Icon
-  export const Checkmark: Icon
-  export const Chrome: Icon
-  export const CircleInformation: Icon
-  export const CirclePlay: Icon
-  export const CircleQuestion: Icon
-  export const Clear: Icon
-  export const ClearOption: Icon
-  export const Cli: Icon
-  export const Clipboard: Icon
-  export const Clock: Icon
-  export const Clone: Icon
-  export const Close: Icon
-  export const ClosedCaption: Icon
-  export const Cloud: Icon
-  export const CloudComputer: Icon
-  export const CloudDownload: Icon
-  export const CloudSoftware: Icon
-  export const CloudUpload: Icon
-  export const Cloudlinux: Icon
-  export const Cluster: Icon
-  export const CoatCheck: Icon
-  export const Code: Icon
-  export const CodeSandbox: Icon
-  export const Codepen: Icon
-  export const Columns: Icon
-  export const Command: Icon
-  export const Compare: Icon
-  export const Compass: Icon
-  export const Compliance: Icon
-  export const Configure: Icon
-  export const Connect: Icon
-  export const Connectivity: Icon
-  export const Contact: Icon
-  export const ContactInfo: Icon
-  export const Contract: Icon
-  export const Copy: Icon
-  export const CreativeCommons: Icon
-  export const CreditCard: Icon
-  export const Css3: Icon
-  export const Cube: Icon
-  export const Cubes: Icon
-  export const Currency: Icon
-  export const Cursor: Icon
-  export const Cut: Icon
-  export const Cycle: Icon
-  export const Dashboard: Icon
-  export const Database: Icon
-  export const Debian: Icon
-  export const Deliver: Icon
-  export const Deploy: Icon
-  export const Descend: Icon
-  export const Desktop: Icon
-  export const Detach: Icon
-  export const Device: Icon
-  export const Diamond: Icon
-  export const Directions: Icon
-  export const Disc: Icon
-  export const Dislike: Icon
-  export const Docker: Icon
-  export const Document: Icon
-  export const DocumentCloud: Icon
-  export const DocumentConfig: Icon
-  export const DocumentCsv: Icon
-  export const DocumentDownload: Icon
-  export const DocumentExcel: Icon
-  export const DocumentImage: Icon
-  export const DocumentLocked: Icon
-  export const DocumentMissing: Icon
-  export const DocumentNotes: Icon
-  export const DocumentOutlook: Icon
-  export const DocumentPdf: Icon
-  export const DocumentPerformance: Icon
-  export const DocumentPpt: Icon
-  export const DocumentRtf: Icon
-  export const DocumentSound: Icon
-  export const DocumentStore: Icon
-  export const DocumentTest: Icon
-  export const DocumentText: Icon
-  export const DocumentThreat: Icon
-  export const DocumentTime: Icon
-  export const DocumentTransfer: Icon
-  export const DocumentTxt: Icon
-  export const DocumentUpdate: Icon
-  export const DocumentUpload: Icon
-  export const DocumentUser: Icon
-  export const DocumentVerified: Icon
-  export const DocumentVideo: Icon
-  export const DocumentWindows: Icon
-  export const DocumentWord: Icon
-  export const DocumentZip: Icon
-  export const Domain: Icon
-  export const Dos: Icon
-  export const Down: Icon
-  export const Download: Icon
-  export const Drag: Icon
-  export const Drawer: Icon
-  export const DriveCage: Icon
-  export const Dropbox: Icon
-  export const Duplicate: Icon
-  export const Dxc: Icon
-  export const Edge: Icon
-  export const Edit: Icon
-  export const Eject: Icon
-  export const Elevator: Icon
-  export const Emergency: Icon
-  export const Emoji: Icon
-  export const EmptyCircle: Icon
-  export const Erase: Icon
-  export const Escalator: Icon
-  export const Expand: Icon
-  export const Facebook: Icon
-  export const FacebookOption: Icon
-  export const Fan: Icon
-  export const FastForward: Icon
-  export const Favorite: Icon
-  export const Fedora: Icon
-  export const Filter: Icon
-  export const FingerPrint: Icon
-  export const Fireball: Icon
-  export const Firefox: Icon
-  export const Flag: Icon
-  export const FlagFill: Icon
-  export const Folder: Icon
-  export const FolderCycle: Icon
-  export const FolderOpen: Icon
-  export const FormAdd: Icon
-  export const FormAttachment: Icon
-  export const FormCalendar: Icon
-  export const FormCheckmark: Icon
-  export const FormClock: Icon
-  export const FormClose: Icon
-  export const FormCut: Icon
-  export const FormDown: Icon
-  export const FormEdit: Icon
-  export const FormFilter: Icon
-  export const FormFolder: Icon
-  export const FormLocation: Icon
-  export const FormLock: Icon
-  export const FormNext: Icon
-  export const FormNextLink: Icon
-  export const FormPrevious: Icon
-  export const FormPreviousLink: Icon
-  export const FormRefresh: Icon
-  export const FormSchedule: Icon
-  export const FormSearch: Icon
-  export const FormSubtract: Icon
-  export const FormTrash: Icon
-  export const FormUp: Icon
-  export const FormUpload: Icon
-  export const FormView: Icon
-  export const FormViewHide: Icon
-  export const ForwardTen: Icon
-  export const Freebsd: Icon
-  export const Gallery: Icon
-  export const Gamepad: Icon
-  export const Gift: Icon
-  export const Github: Icon
-  export const Globe: Icon
-  export const Golang: Icon
-  export const Google: Icon
-  export const GooglePlus: Icon
-  export const GoogleWallet: Icon
-  export const Gremlin: Icon
-  export const Grid: Icon
-  export const Grommet: Icon
-  export const Group: Icon
-  export const Grow: Icon
-  export const Hadoop: Icon
-  export const Halt: Icon
-  export const Help: Icon
-  export const Heroku: Icon
-  export const History: Icon
-  export const Home: Icon
-  export const Horton: Icon
-  export const Host: Icon
-  export const HostMaintenance: Icon
-  export const Hp: Icon
-  export const Hpe: Icon
-  export const HpeLabs: Icon
-  export const Hpi: Icon
-  export const Html5: Icon
-  export const IceCream: Icon
-  export const Image: Icon
-  export const Impact: Icon
-  export const InProgress: Icon
-  export const Inbox: Icon
-  export const Indicator: Icon
-  export const Info: Icon
-  export const Inherit: Icon
-  export const Inspect: Icon
-  export const Instagram: Icon
-  export const Install: Icon
-  export const InstallOption: Icon
-  export const Integration: Icon
-  export const InternetExplorer: Icon
-  export const Italic: Icon
-  export const Iteration: Icon
-  export const Java: Icon
-  export const Keyboard: Icon
-  export const Language: Icon
-  export const Launch: Icon
-  export const Layer: Icon
-  export const License: Icon
-  export const Like: Icon
-  export const LineChart: Icon
-  export const Link: Icon
-  export const LinkBottom: Icon
-  export const LinkDown: Icon
-  export const LinkNext: Icon
-  export const LinkPrevious: Icon
-  export const LinkTop: Icon
-  export const LinkUp: Icon
-  export const Linkedin: Icon
-  export const LinkedinOption: Icon
-  export const Local: Icon
-  export const Location: Icon
-  export const LocationPin: Icon
-  export const Lock: Icon
-  export const Login: Icon
-  export const Logout: Icon
-  export const Lounge: Icon
-  export const Magic: Icon
-  export const Mail: Icon
-  export const MailOption: Icon
-  export const Mandriva: Icon
-  export const Manual: Icon
-  export const Map: Icon
-  export const MapLocation: Icon
-  export const Mastercard: Icon
-  export const Medium: Icon
-  export const Menu: Icon
-  export const Microfocus: Icon
-  export const Microphone: Icon
-  export const Money: Icon
-  export const Monitor: Icon
-  export const Monospace: Icon
-  export const More: Icon
-  export const Multimedia: Icon
-  export const Multiple: Icon
-  export const Music: Icon
-  export const Mysql: Icon
-  export const Navigate: Icon
-  export const Network: Icon
-  export const New: Icon
-  export const NewWindow: Icon
-  export const Next: Icon
-  export const Nodes: Icon
-  export const Norton: Icon
-  export const Note: Icon
-  export const Notes: Icon
-  export const Notification: Icon
-  export const ObjectGroup: Icon
-  export const ObjectUngroup: Icon
-  export const OfflineStorage: Icon
-  export const Onedrive: Icon
-  export const Opera: Icon
-  export const Optimize: Icon
-  export const Oracle: Icon
-  export const OrderedList: Icon
-  export const Organization: Icon
-  export const Overview: Icon
-  export const Paint: Icon
-  export const Pan: Icon
-  export const Pause: Icon
-  export const PauseFill: Icon
-  export const Paypal: Icon
-  export const Performance: Icon
-  export const PersonalComputer: Icon
-  export const PieChart: Icon
-  export const PiedPiper: Icon
-  export const Pin: Icon
-  export const Pinterest: Icon
-  export const Plan: Icon
-  export const Play: Icon
-  export const PlayFill: Icon
-  export const Power: Icon
-  export const PowerCycle: Icon
-  export const PowerForceShutdown: Icon
-  export const PowerReset: Icon
-  export const PowerShutdown: Icon
-  export const Previous: Icon
-  export const Print: Icon
-  export const ProductHunt: Icon
-  export const Projects: Icon
-  export const Radial: Icon
-  export const RadialSelected: Icon
-  export const Raspberry: Icon
-  export const Reactjs: Icon
-  export const Reddit: Icon
-  export const Redhat: Icon
-  export const Redo: Icon
-  export const Refresh: Icon
-  export const Resources: Icon
-  export const Restaurant: Icon
-  export const Restroom: Icon
-  export const RestroomMen: Icon
-  export const RestroomWomen: Icon
-  export const Resume: Icon
-  export const Return: Icon
-  export const Revert: Icon
-  export const Rewind: Icon
-  export const Risk: Icon
-  export const Robot: Icon
-  export const RotateLeft: Icon
-  export const RotateRight: Icon
-  export const Rss: Icon
-  export const Run: Icon
-  export const SafariOption: Icon
-  export const Satellite: Icon
-  export const Save: Icon
-  export const Scan: Icon
-  export const Schedule: Icon
-  export const ScheduleNew: Icon
-  export const SchedulePlay: Icon
-  export const Schedules: Icon
-  export const Sco: Icon
-  export const Scorecard: Icon
-  export const Search: Icon
-  export const SearchAdvanced: Icon
-  export const Secure: Icon
-  export const Select: Icon
-  export const Selection: Icon
-  export const Semantics: Icon
-  export const Send: Icon
-  export const Server: Icon
-  export const ServerCluster: Icon
-  export const Servers: Icon
-  export const ServicePlay: Icon
-  export const Services: Icon
-  export const SettingsOption: Icon
-  export const Share: Icon
-  export const ShareOption: Icon
-  export const Shield: Icon
-  export const ShieldSecurity: Icon
-  export const Shift: Icon
-  export const Shop: Icon
-  export const Sidebar: Icon
-  export const Sign: Icon
-  export const Skype: Icon
-  export const Slack: Icon
-  export const Snapchat: Icon
-  export const Solaris: Icon
-  export const Sort: Icon
-  export const Spa: Icon
-  export const Split: Icon
-  export const Splits: Icon
-  export const Square: Icon
-  export const StackOverflow: Icon
-  export const Stakeholder: Icon
-  export const Star: Icon
-  export const StarHalf: Icon
-  export const StatusCritical: Icon
-  export const StatusCriticalSmall: Icon
-  export const StatusDisabled: Icon
-  export const StatusDisabledSmall: Icon
-  export const StatusGood: Icon
-  export const StatusGoodSmall: Icon
-  export const StatusInfo: Icon
-  export const StatusInfoSmall: Icon
-  export const StatusPlaceholder: Icon
-  export const StatusPlaceholderSmall: Icon
-  export const StatusUnknown: Icon
-  export const StatusUnknownSmall: Icon
-  export const StatusWarning: Icon
-  export const StatusWarningSmall: Icon
-  export const Steps: Icon
-  export const StepsOption: Icon
-  export const Stop: Icon
-  export const StopFill: Icon
-  export const Storage: Icon
-  export const StreetView: Icon
-  export const StrikeThrough: Icon
-  export const Stripe: Icon
-  export const Subscript: Icon
-  export const Subtract: Icon
-  export const SubtractCircle: Icon
-  export const Superscript: Icon
-  export const Support: Icon
-  export const Suse: Icon
-  export const Swift: Icon
-  export const Swim: Icon
-  export const Sync: Icon
-  export const System: Icon
-  export const Table: Icon
-  export const TableAdd: Icon
-  export const Tag: Icon
-  export const Tape: Icon
-  export const TapeOption: Icon
-  export const Target: Icon
-  export const Task: Icon
-  export const Tasks: Icon
-  export const Technology: Icon
-  export const Template: Icon
-  export const Terminal: Icon
-  export const Test: Icon
-  export const TestDesktop: Icon
-  export const TextAlignCenter: Icon
-  export const TextAlignFull: Icon
-  export const TextAlignLeft: Icon
-  export const TextAlignRight: Icon
-  export const TextWrap: Icon
-  export const Threats: Icon
-  export const ThreeD: Icon
-  export const ThreeDffects: Icon
-  export const Ticket: Icon
-  export const Tip: Icon
-  export const Toast: Icon
-  export const Tools: Icon
-  export const Tooltip: Icon
-  export const TopCorner: Icon
-  export const Train: Icon
-  export const Transaction: Icon
-  export const Trash: Icon
-  export const Tree: Icon
-  export const TreeOption: Icon
-  export const Trigger: Icon
-  export const Trophy: Icon
-  export const Troubleshoot: Icon
-  export const Tty: Icon
-  export const Tumblr: Icon
-  export const Turbolinux: Icon
-  export const Twitter: Icon
-  export const Ubuntu: Icon
-  export const Underline: Icon
-  export const Undo: Icon
-  export const Unlink: Icon
-  export const Unlock: Icon
-  export const UnorderedList: Icon
-  export const Up: Icon
-  export const Update: Icon
-  export const Upgrade: Icon
-  export const Upload: Icon
-  export const User: Icon
-  export const UserAdd: Icon
-  export const UserAdmin: Icon
-  export const UserExpert: Icon
-  export const UserFemale: Icon
-  export const UserManager: Icon
-  export const UserNew: Icon
-  export const UserPolice: Icon
-  export const UserSettings: Icon
-  export const UserWorker: Icon
-  export const Validate: Icon
-  export const Vend: Icon
-  export const Video: Icon
-  export const View: Icon
-  export const Vimeo: Icon
-  export const VirtualMachine: Icon
-  export const VirtualStorage: Icon
-  export const Visa: Icon
-  export const VmMaintenance: Icon
-  export const Vmware: Icon
-  export const Volume: Icon
-  export const VolumeControl: Icon
-  export const VolumeLow: Icon
-  export const VolumeMute: Icon
-  export const Vulnerability: Icon
-  export const Waypoint: Icon
-  export const Wheelchair: Icon
-  export const WheelchairActive: Icon
-  export const Wifi: Icon
-  export const WifiLow: Icon
-  export const WifiMedium: Icon
-  export const WifiNone: Icon
-  export const Windows: Icon
-  export const WindowsLegacy: Icon
-  export const Wordpress: Icon
-  export const Workshop: Icon
-  export const Yoga: Icon
-  export const Youtube: Icon
-  export const ZoomIn: Icon
-  export const ZoomOut: Icon
-  export const base: Icon
-  export const defaultProps: Icon
-  export const extendDefaultTheme: Icon
+  const Accessibility: Icon
+  const Achievement: Icon
+  const Action: Icon
+  const Actions: Icon
+  const Ad: Icon
+  const Add: Icon
+  const AddCircle: Icon
+  const Aed: Icon
+  const Aggregate: Icon
+  const Aid: Icon
+  const AidOption: Icon
+  const Alarm: Icon
+  const Alert: Icon
+  const Amazon: Icon
+  const Amex: Icon
+  const Analytics: Icon
+  const Anchor: Icon
+  const Android: Icon
+  const Announce: Icon
+  const Apple: Icon
+  const Apps: Icon
+  const Archive: Icon
+  const Archlinux: Icon
+  const Article: Icon
+  const Aruba: Icon
+  const Ascend: Icon
+  const AssistListening: Icon
+  const Atm: Icon
+  const Attachment: Icon
+  const Attraction: Icon
+  const Baby: Icon
+  const BackTen: Icon
+  const Bar: Icon
+  const BarChart: Icon
+  const Basket: Icon
+  const Bike: Icon
+  const Bitcoin: Icon
+  const Blank: Icon
+  const BlockQuote: Icon
+  const Blog: Icon
+  const Bluetooth: Icon
+  const Bold: Icon
+  const Book: Icon
+  const Bookmark: Icon
+  const BottomCorner: Icon
+  const Braille: Icon
+  const Briefcase: Icon
+  const Brush: Icon
+  const Bug: Icon
+  const Bundle: Icon
+  const Bus: Icon
+  const BusinessService: Icon
+  const Cafeteria: Icon
+  const Calculator: Icon
+  const Calendar: Icon
+  const Camera: Icon
+  const Capacity: Icon
+  const Car: Icon
+  const CaretDown: Icon
+  const CaretNext: Icon
+  const CaretPrevious: Icon
+  const CaretUp: Icon
+  const Cart: Icon
+  const Catalog: Icon
+  const CatalogOption: Icon
+  const Centos: Icon
+  const Channel: Icon
+  const ChapterAdd: Icon
+  const ChapterNext: Icon
+  const ChapterPrevious: Icon
+  const Chat: Icon
+  const ChatOption: Icon
+  const Checkbox: Icon
+  const CheckboxSelected: Icon
+  const Checkmark: Icon
+  const Chrome: Icon
+  const CircleInformation: Icon
+  const CirclePlay: Icon
+  const CircleQuestion: Icon
+  const Clear: Icon
+  const ClearOption: Icon
+  const Cli: Icon
+  const Clipboard: Icon
+  const Clock: Icon
+  const Clone: Icon
+  const Close: Icon
+  const ClosedCaption: Icon
+  const Cloud: Icon
+  const CloudComputer: Icon
+  const CloudDownload: Icon
+  const CloudSoftware: Icon
+  const CloudUpload: Icon
+  const Cloudlinux: Icon
+  const Cluster: Icon
+  const CoatCheck: Icon
+  const Code: Icon
+  const CodeSandbox: Icon
+  const Codepen: Icon
+  const Columns: Icon
+  const Command: Icon
+  const Compare: Icon
+  const Compass: Icon
+  const Compliance: Icon
+  const Configure: Icon
+  const Connect: Icon
+  const Connectivity: Icon
+  const Contact: Icon
+  const ContactInfo: Icon
+  const Contract: Icon
+  const Copy: Icon
+  const CreativeCommons: Icon
+  const CreditCard: Icon
+  const Css3: Icon
+  const Cube: Icon
+  const Cubes: Icon
+  const Currency: Icon
+  const Cursor: Icon
+  const Cut: Icon
+  const Cycle: Icon
+  const Dashboard: Icon
+  const Database: Icon
+  const Debian: Icon
+  const Deliver: Icon
+  const Deploy: Icon
+  const Descend: Icon
+  const Desktop: Icon
+  const Detach: Icon
+  const Device: Icon
+  const Diamond: Icon
+  const Directions: Icon
+  const Disc: Icon
+  const Dislike: Icon
+  const Docker: Icon
+  const Document: Icon
+  const DocumentCloud: Icon
+  const DocumentConfig: Icon
+  const DocumentCsv: Icon
+  const DocumentDownload: Icon
+  const DocumentExcel: Icon
+  const DocumentImage: Icon
+  const DocumentLocked: Icon
+  const DocumentMissing: Icon
+  const DocumentNotes: Icon
+  const DocumentOutlook: Icon
+  const DocumentPdf: Icon
+  const DocumentPerformance: Icon
+  const DocumentPpt: Icon
+  const DocumentRtf: Icon
+  const DocumentSound: Icon
+  const DocumentStore: Icon
+  const DocumentTest: Icon
+  const DocumentText: Icon
+  const DocumentThreat: Icon
+  const DocumentTime: Icon
+  const DocumentTransfer: Icon
+  const DocumentTxt: Icon
+  const DocumentUpdate: Icon
+  const DocumentUpload: Icon
+  const DocumentUser: Icon
+  const DocumentVerified: Icon
+  const DocumentVideo: Icon
+  const DocumentWindows: Icon
+  const DocumentWord: Icon
+  const DocumentZip: Icon
+  const Domain: Icon
+  const Dos: Icon
+  const Down: Icon
+  const Download: Icon
+  const Drag: Icon
+  const Drawer: Icon
+  const DriveCage: Icon
+  const Dropbox: Icon
+  const Duplicate: Icon
+  const Dxc: Icon
+  const Edge: Icon
+  const Edit: Icon
+  const Eject: Icon
+  const Elevator: Icon
+  const Emergency: Icon
+  const Emoji: Icon
+  const EmptyCircle: Icon
+  const Erase: Icon
+  const Escalator: Icon
+  const Expand: Icon
+  const Facebook: Icon
+  const FacebookOption: Icon
+  const Fan: Icon
+  const FastForward: Icon
+  const Favorite: Icon
+  const Fedora: Icon
+  const Filter: Icon
+  const FingerPrint: Icon
+  const Fireball: Icon
+  const Firefox: Icon
+  const Flag: Icon
+  const FlagFill: Icon
+  const Folder: Icon
+  const FolderCycle: Icon
+  const FolderOpen: Icon
+  const FormAdd: Icon
+  const FormAttachment: Icon
+  const FormCalendar: Icon
+  const FormCheckmark: Icon
+  const FormClock: Icon
+  const FormClose: Icon
+  const FormCut: Icon
+  const FormDown: Icon
+  const FormEdit: Icon
+  const FormFilter: Icon
+  const FormFolder: Icon
+  const FormLocation: Icon
+  const FormLock: Icon
+  const FormNext: Icon
+  const FormNextLink: Icon
+  const FormPrevious: Icon
+  const FormPreviousLink: Icon
+  const FormRefresh: Icon
+  const FormSchedule: Icon
+  const FormSearch: Icon
+  const FormSubtract: Icon
+  const FormTrash: Icon
+  const FormUp: Icon
+  const FormUpload: Icon
+  const FormView: Icon
+  const FormViewHide: Icon
+  const ForwardTen: Icon
+  const Freebsd: Icon
+  const Gallery: Icon
+  const Gamepad: Icon
+  const Gift: Icon
+  const Github: Icon
+  const Globe: Icon
+  const Golang: Icon
+  const Google: Icon
+  const GooglePlus: Icon
+  const GoogleWallet: Icon
+  const Gremlin: Icon
+  const Grid: Icon
+  const Grommet: Icon
+  const Group: Icon
+  const Grow: Icon
+  const Hadoop: Icon
+  const Halt: Icon
+  const Help: Icon
+  const Heroku: Icon
+  const History: Icon
+  const Home: Icon
+  const Horton: Icon
+  const Host: Icon
+  const HostMaintenance: Icon
+  const Hp: Icon
+  const Hpe: Icon
+  const HpeLabs: Icon
+  const Hpi: Icon
+  const Html5: Icon
+  const IceCream: Icon
+  const Image: Icon
+  const Impact: Icon
+  const InProgress: Icon
+  const Inbox: Icon
+  const Indicator: Icon
+  const Info: Icon
+  const Inherit: Icon
+  const Inspect: Icon
+  const Instagram: Icon
+  const Install: Icon
+  const InstallOption: Icon
+  const Integration: Icon
+  const InternetExplorer: Icon
+  const Italic: Icon
+  const Iteration: Icon
+  const Java: Icon
+  const Keyboard: Icon
+  const Language: Icon
+  const Launch: Icon
+  const Layer: Icon
+  const License: Icon
+  const Like: Icon
+  const LineChart: Icon
+  const Link: Icon
+  const LinkBottom: Icon
+  const LinkDown: Icon
+  const LinkNext: Icon
+  const LinkPrevious: Icon
+  const LinkTop: Icon
+  const LinkUp: Icon
+  const Linkedin: Icon
+  const LinkedinOption: Icon
+  const Local: Icon
+  const Location: Icon
+  const LocationPin: Icon
+  const Lock: Icon
+  const Login: Icon
+  const Logout: Icon
+  const Lounge: Icon
+  const Magic: Icon
+  const Mail: Icon
+  const MailOption: Icon
+  const Mandriva: Icon
+  const Manual: Icon
+  const Map: Icon
+  const MapLocation: Icon
+  const Mastercard: Icon
+  const Medium: Icon
+  const Menu: Icon
+  const Microfocus: Icon
+  const Microphone: Icon
+  const Money: Icon
+  const Monitor: Icon
+  const Monospace: Icon
+  const More: Icon
+  const Multimedia: Icon
+  const Multiple: Icon
+  const Music: Icon
+  const Mysql: Icon
+  const Navigate: Icon
+  const Network: Icon
+  const New: Icon
+  const NewWindow: Icon
+  const Next: Icon
+  const Nodes: Icon
+  const Norton: Icon
+  const Note: Icon
+  const Notes: Icon
+  const Notification: Icon
+  const ObjectGroup: Icon
+  const ObjectUngroup: Icon
+  const OfflineStorage: Icon
+  const Onedrive: Icon
+  const Opera: Icon
+  const Optimize: Icon
+  const Oracle: Icon
+  const OrderedList: Icon
+  const Organization: Icon
+  const Overview: Icon
+  const Paint: Icon
+  const Pan: Icon
+  const Pause: Icon
+  const PauseFill: Icon
+  const Paypal: Icon
+  const Performance: Icon
+  const PersonalComputer: Icon
+  const PieChart: Icon
+  const PiedPiper: Icon
+  const Pin: Icon
+  const Pinterest: Icon
+  const Plan: Icon
+  const Play: Icon
+  const PlayFill: Icon
+  const Power: Icon
+  const PowerCycle: Icon
+  const PowerForceShutdown: Icon
+  const PowerReset: Icon
+  const PowerShutdown: Icon
+  const Previous: Icon
+  const Print: Icon
+  const ProductHunt: Icon
+  const Projects: Icon
+  const Radial: Icon
+  const RadialSelected: Icon
+  const Raspberry: Icon
+  const Reactjs: Icon
+  const Reddit: Icon
+  const Redhat: Icon
+  const Redo: Icon
+  const Refresh: Icon
+  const Resources: Icon
+  const Restaurant: Icon
+  const Restroom: Icon
+  const RestroomMen: Icon
+  const RestroomWomen: Icon
+  const Resume: Icon
+  const Return: Icon
+  const Revert: Icon
+  const Rewind: Icon
+  const Risk: Icon
+  const Robot: Icon
+  const RotateLeft: Icon
+  const RotateRight: Icon
+  const Rss: Icon
+  const Run: Icon
+  const SafariOption: Icon
+  const Satellite: Icon
+  const Save: Icon
+  const Scan: Icon
+  const Schedule: Icon
+  const ScheduleNew: Icon
+  const SchedulePlay: Icon
+  const Schedules: Icon
+  const Sco: Icon
+  const Scorecard: Icon
+  const Search: Icon
+  const SearchAdvanced: Icon
+  const Secure: Icon
+  const Select: Icon
+  const Selection: Icon
+  const Semantics: Icon
+  const Send: Icon
+  const Server: Icon
+  const ServerCluster: Icon
+  const Servers: Icon
+  const ServicePlay: Icon
+  const Services: Icon
+  const SettingsOption: Icon
+  const Share: Icon
+  const ShareOption: Icon
+  const Shield: Icon
+  const ShieldSecurity: Icon
+  const Shift: Icon
+  const Shop: Icon
+  const Sidebar: Icon
+  const Sign: Icon
+  const Skype: Icon
+  const Slack: Icon
+  const Snapchat: Icon
+  const Solaris: Icon
+  const Sort: Icon
+  const Spa: Icon
+  const Split: Icon
+  const Splits: Icon
+  const Square: Icon
+  const StackOverflow: Icon
+  const Stakeholder: Icon
+  const Star: Icon
+  const StarHalf: Icon
+  const StatusCritical: Icon
+  const StatusCriticalSmall: Icon
+  const StatusDisabled: Icon
+  const StatusDisabledSmall: Icon
+  const StatusGood: Icon
+  const StatusGoodSmall: Icon
+  const StatusInfo: Icon
+  const StatusInfoSmall: Icon
+  const StatusPlaceholder: Icon
+  const StatusPlaceholderSmall: Icon
+  const StatusUnknown: Icon
+  const StatusUnknownSmall: Icon
+  const StatusWarning: Icon
+  const StatusWarningSmall: Icon
+  const Steps: Icon
+  const StepsOption: Icon
+  const Stop: Icon
+  const StopFill: Icon
+  const Storage: Icon
+  const StreetView: Icon
+  const StrikeThrough: Icon
+  const Stripe: Icon
+  const Subscript: Icon
+  const Subtract: Icon
+  const SubtractCircle: Icon
+  const Superscript: Icon
+  const Support: Icon
+  const Suse: Icon
+  const Swift: Icon
+  const Swim: Icon
+  const Sync: Icon
+  const System: Icon
+  const Table: Icon
+  const TableAdd: Icon
+  const Tag: Icon
+  const Tape: Icon
+  const TapeOption: Icon
+  const Target: Icon
+  const Task: Icon
+  const Tasks: Icon
+  const Technology: Icon
+  const Template: Icon
+  const Terminal: Icon
+  const Test: Icon
+  const TestDesktop: Icon
+  const TextAlignCenter: Icon
+  const TextAlignFull: Icon
+  const TextAlignLeft: Icon
+  const TextAlignRight: Icon
+  const TextWrap: Icon
+  const Threats: Icon
+  const ThreeD: Icon
+  const ThreeDffects: Icon
+  const Ticket: Icon
+  const Tip: Icon
+  const Toast: Icon
+  const Tools: Icon
+  const Tooltip: Icon
+  const TopCorner: Icon
+  const Train: Icon
+  const Transaction: Icon
+  const Trash: Icon
+  const Tree: Icon
+  const TreeOption: Icon
+  const Trigger: Icon
+  const Trophy: Icon
+  const Troubleshoot: Icon
+  const Tty: Icon
+  const Tumblr: Icon
+  const Turbolinux: Icon
+  const Twitter: Icon
+  const Ubuntu: Icon
+  const Underline: Icon
+  const Undo: Icon
+  const Unlink: Icon
+  const Unlock: Icon
+  const UnorderedList: Icon
+  const Up: Icon
+  const Update: Icon
+  const Upgrade: Icon
+  const Upload: Icon
+  const User: Icon
+  const UserAdd: Icon
+  const UserAdmin: Icon
+  const UserExpert: Icon
+  const UserFemale: Icon
+  const UserManager: Icon
+  const UserNew: Icon
+  const UserPolice: Icon
+  const UserSettings: Icon
+  const UserWorker: Icon
+  const Validate: Icon
+  const Vend: Icon
+  const Video: Icon
+  const View: Icon
+  const Vimeo: Icon
+  const VirtualMachine: Icon
+  const VirtualStorage: Icon
+  const Visa: Icon
+  const VmMaintenance: Icon
+  const Vmware: Icon
+  const Volume: Icon
+  const VolumeControl: Icon
+  const VolumeLow: Icon
+  const VolumeMute: Icon
+  const Vulnerability: Icon
+  const Waypoint: Icon
+  const Wheelchair: Icon
+  const WheelchairActive: Icon
+  const Wifi: Icon
+  const WifiLow: Icon
+  const WifiMedium: Icon
+  const WifiNone: Icon
+  const Windows: Icon
+  const WindowsLegacy: Icon
+  const Wordpress: Icon
+  const Workshop: Icon
+  const Yoga: Icon
+  const Youtube: Icon
+  const ZoomIn: Icon
+  const ZoomOut: Icon
+  const base: Icon
+  const defaultProps: Icon
+  const extendDefaultTheme: Icon
 }

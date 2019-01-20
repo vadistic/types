@@ -5,8 +5,12 @@
 
 import * as React from 'react'
 
-import { BoxProps, Box } from './components/Box'
-import { ButtonProps, Button } from './components/Button'
+import { BoxProps, Box, BoxI } from './components/Box'
+import { ButtonProps, Button, ButtonI } from './components/Button'
+import { HeadingProps, Heading, HeadingI } from './components/Heading'
+import { Paragraph, ParagraphProps, ParagraphI } from './components/Paragraph'
+import { Text, TextI, TextProps } from './components/Text'
+import { Anchor, AnchorI, AnchorProps } from './components/Anchor'
 
 import {
   CssAndIntristicProps,

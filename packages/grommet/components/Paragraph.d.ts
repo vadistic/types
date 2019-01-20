@@ -1,8 +1,8 @@
 import * as React from 'react'
 
-import { ColorValue, EdgeSizeValue, Theme, AlignSelfValue } from '../shared'
+import { AlignSelfValue, ColorValue, EdgeSizeValue, Theme } from '../shared'
 
-type ParagraphSize<T = Theme> = keyof T['paragraph']
+export type ParagraphSize<T = Theme> = keyof T['paragraph']
 
 export interface ParagraphProps<T = Theme> {
   a11yTitle?: string

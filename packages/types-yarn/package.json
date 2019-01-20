@@ -1,6 +1,6 @@
 {
   "name": "types-yarn",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Gitpkg typings replacement for yarn outdated & upgrade",
   "repository": "https://github.com/vadistic/types",
   "homepage": "https://github.com/vadistic/types#readme",

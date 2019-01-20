@@ -1,7 +1,13 @@
 {
-  "extends": "dtslint/dtslint.json, tslint-config-prettier",
+  "extends": [
+    "dtslint/dtslint.json",
+    "tslint:recommended",
+    "tslint-config-prettier"
+  ],
   "rules": {
     // declaring module allow overwirting vendor typings without additional setup
-    "no-single-declare-module": false
+    "no-single-declare-module": false,
+    "ordered-imports": true,
+    "interface-name": [true, "never-prefix"]
   }
 }

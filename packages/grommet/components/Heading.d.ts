@@ -1,11 +1,11 @@
 import * as React from 'react'
 
-import { Theme, EdgeSizeValue, ColorValue } from '../shared'
+import { ColorValue, EdgeSizeValue, Theme } from '../shared'
 
-type HeadingLevelValue<T> = keyof T['heading']['level']
+export type HeadingLevelValue<T> = keyof T['heading']['level']
 
 // TODO: Omit 'font' prop
-type HeadingSizeValue<
+export type HeadingSizeValue<
   T = Theme
 > = keyof T['heading']['level'][HeadingLevelValue<T>]
 
