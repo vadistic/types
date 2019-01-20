@@ -38,6 +38,9 @@ export default (async () => {
   // sync peerDeps to DevDeeps
   nextPkg['peerDependencies'] = nextPkg['devDependencies']
 
+  // copy dependencies
+  nextPkg['dependencies'] = prevPkg['dependencies']
+
   // why only sync pretty-print ??
   json.writeFileSync(path.resolve('./package.json'), nextPkg, {
     spaces: 2,
