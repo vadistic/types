@@ -1,0 +1,29 @@
+{
+  "name": "types-yarn",
+  "version": "0.1.0",
+  "description": "Gitpkg typings replacement for yarn outdated & upgrade",
+  "repository": "https://github.com/vadistic/types",
+  "homepage": "https://github.com/vadistic/types#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "dist/types-yarn.js",
+  "private": false,
+  "bin": {
+    "types-yarn": "dist/types-yarn.js"
+  },
+  "scripts": {
+    "ts-bin": "ts-node ./types-yarn",
+    "build": "rm -rf dist && yarn tsc",
+    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.10.0",
+    "jsonfile": "^5.0.0",
+    "semver": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/jsonfile": "^5.0.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.4"
+  }
+}
