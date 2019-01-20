@@ -21,7 +21,7 @@ export interface AnchorProps<T = Theme> {
   href?: string
   icon?: JSX.Element
   label?: React.ReactNode
-  onClick?: ((...args: any[]) => any)
+  onClick?: (...args: any[]) => any
   reverse?: boolean
   size?: TextSize<T>
   as?: string

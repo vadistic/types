@@ -62,7 +62,7 @@ declare module 'grommet/themes' {
     'status-disabled': string
   }
 
-  function generate (
+  function generate(
     baseSpacing?: number,
     scale?: number,
   ): IconBase & {

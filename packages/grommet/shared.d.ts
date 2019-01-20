@@ -22,7 +22,10 @@ export type CssAndIntristicProps<
 export type Theme = typeof base
 
 // Themable type values
-export type ColorNames<T = Theme> = FilterObjectKeys<Theme['global']['colors'], string>
+export type ColorNames<T = Theme> = FilterObjectKeys<
+  Theme['global']['colors'],
+  string
+>
 
 export type ColorValue<T = Theme> =
   | ColorNames<T>

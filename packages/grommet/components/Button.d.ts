@@ -35,7 +35,7 @@ export interface ButtonProps<T = Theme> {
   href?: string
   icon?: JSX.Element
   label?: React.ReactNode
-  onClick?: ((...args: any[]) => any)
+  onClick?: (...args: any[]) => any
   plain?: boolean
   primary?: boolean
   reverse?: boolean
