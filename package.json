@@ -1,0 +1,19 @@
+{
+  "name": "types-util",
+  "version": "0.1.1",
+  "description": "Utility typescript types",
+  "repository": "https://github.com/vadistic/types",
+  "homepage": "https://github.com/vadistic/types#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "private": false,
+  "scripts": {
+    "gitpkg": "../../node_modules/.bin/gitpkg publish",
+    "bump": "ts-node ../../scripts/bump-util"
+  },
+  "peerDependencies": {
+    "typescript": ">= 3.0.0"
+  }
+}
