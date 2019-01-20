@@ -1,0 +1,40 @@
+{
+  "name": "@types/grommet",
+  "version": "2.3.1-1",
+  "description": "My typescript definitions for `grommet` package",
+  "repository": "https://github.com/vadistic/types/packages/grommet",
+  "homepage": "https://github.com/vadistic/types/tree/master/packages/grommet#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "sync": "ts-node ../../scripts/sync",
+    "bump": "ts-node ../../scripts/bump-type",
+    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+  },
+  "private": false,
+  "dependencies": {
+    "@types/grommet-icons": "https://github.com/vadistic/types#types-grommet-icons-v4.1.0-0-gitpkg",
+    "@types/styled-components": "^4.1.6",
+    "types-util": "https://github.com/vadistic/types#types-util-v0.1.1-gitpkg"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "grommet": "^2.3.1",
+    "grommet-icons": "^4.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "grommet": "^2.3.1",
+    "grommet-icons": "^4.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "styled-components": "^4.1.3"
+  }
+}

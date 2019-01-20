@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["index.d.ts", "themes.d.ts", "utils.d.ts", "components/*"]
+}
