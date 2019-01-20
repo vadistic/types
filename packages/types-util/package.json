@@ -10,7 +10,8 @@
   "types": "index.d.ts",
   "private": false,
   "scripts": {
-    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+    "gitpkg": "../../node_modules/.bin/gitpkg publish",
+    "bump": "ts-node ../../scripts/bump-util"
   },
   "peerDependencies": {
     "typescript": ">= 3.0.0"

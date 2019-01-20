@@ -7,10 +7,10 @@ import * as semver from 'semver'
 export default (async () => {
   const pkg = json.readFileSync(path.resolve('./package.json'))
   const name = path.basename(process.cwd())
-  console.log(path.resolve('./package.json'))
   const upstreamVersionRange = pkg.devDependencies[name]
   const coercedSemver = semver.coerce(upstreamVersionRange)
 
+  const prevVersion = pkg.version
   // manual if package uses non-semver version
   if (!coercedSemver) {
     console.error(
@@ -25,6 +25,8 @@ export default (async () => {
     else {
       pkg.version = coercedSemver.version + '-0'
     }
+
+    console.log(`Package: ${name}: ${prevVersion} => ${pkg.version}`)
 
     json.writeFileSync(path.resolve('./package.json'), pkg, {
       spaces: 2,

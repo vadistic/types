@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "scripts": {
     "sync": "ts-node ../../scripts/sync",
-    "bump": "ts-node ../../scripts/bump",
+    "bump": "ts-node ../../scripts/bump-type",
     "gitpkg": "../../node_modules/.bin/gitpkg publish"
   },
   "private": false,
