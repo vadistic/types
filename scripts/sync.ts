@@ -15,7 +15,9 @@ export default (async () => {
   const name = path.basename(process.cwd())
 
   if (name !== (prevPkg.name as string).replace('@types/', '')) {
-    console.error(`Package naming issue`, name, prevPkg.name)
+    console.error(
+      `Package naming issue: driname '${name}' !== pkgname '${prevPkg.name}'`,
+    )
   }
 
   Object.keys(nextPkg).forEach(field => {

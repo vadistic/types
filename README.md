@@ -8,7 +8,7 @@
 - Sometime you just want some typings that probably should not become official API (breaking changes, weird preferences, crazy generics...)
 - Local declarations lack reusability and version control for sharing across porojects
 - Fork just for some typings fix is hard to maintain
-- Publishing every random bit of code to npm just to install it as package is disservice to the community
+- Publishing every random bit of code to npm just to install it as package is a disservice to the community
 
 **Solution:** Create private, git-powered DefinitelyTyped!
 
