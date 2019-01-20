@@ -1,4 +1,3 @@
 {
-  "extends": "../../tsconfig.json",
-  "files": ["index.d.ts", "themes.d.ts"]
+  "extends": "../../tsconfig.json"
 }

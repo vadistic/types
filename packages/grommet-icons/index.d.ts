@@ -3,7 +3,7 @@
 declare module 'grommet-icons' {
   import React from 'react'
 
-  type IconTheme = typeof import('grommet-icons/themes').base
+  type IconTheme = typeof import('./themes').base
 
   type ColorProp<Theme> = Theme extends IconTheme
     ? keyof Theme['global']['colors']

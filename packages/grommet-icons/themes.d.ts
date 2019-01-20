@@ -1,6 +1,6 @@
 // TypeScript Version: 3.0
 
-declare module 'grommet-icons/themes' {
+declare module 'grommes-icon/themes' {
   export const base: {
     global: {
       colors: {
