@@ -9,3 +9,12 @@ export type NonUndefined<T> = T extends undefined ? never : T
 export type NonUndefinedProps<T extends object> = {
   [K in keyof T]?: NonUndefined<T[K]>
 }
+
+// https://medium.com/dailyjs/typescript-create-a-condition-based-subset-types-9d902cea5b8c
+export type FilterFlags<T, Condition> = {
+  [K in keyof T]: T[K] extends Condition ? K : never
+}
+
+export type FilterObjectKeys<T, Condition> = FilterFlags<T, Condition>[keyof T]
+
+export type SubType<T, Condition> = Pick<T, FilterObjectKeys<T, Condition>>
