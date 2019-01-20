@@ -24,7 +24,8 @@ Since [yarn does not allow installing from git subdirectories](https://github.co
 # Standarise package.json across packages
 $ yarn lerna run sync
 
-# Sync typings version to original package and version typings as semver prereleases (package: ^1.2.3 => @types/package: 1.2.3-0)
+# Sync typings version to original package
+# Versioning convention as prereleases (package: ^1.2.3 => @types/package: 1.2.3-0[1,2,...])
 $ /packages/X yarn bump
 
 # Deploy
@@ -58,5 +59,7 @@ I've found declaring modules is the most straighforward way to disable original 
 ## TODO
 
 [ ] `types-yarn add` to quickly install latest typings
+
 [ ] Generailise `types-yarn` to detect repo/owner
+
 [ ] Develop `types-util`
