@@ -1,0 +1,24 @@
+{
+  "name": "@types/react-photo-gallery",
+  "version": "6.3.0-0",
+  "description": "My typescript definitions for `react-photo-gallery` package",
+  "repository": "https://github.com/vadistic/types/packages/react-photo-gallery",
+  "homepage": "https://github.com/vadistic/types/tree/master/packages/react-photo-gallery#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "sync": "ts-node ../../scripts/sync",
+    "bump": "ts-node ../../scripts/bump-type",
+    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+  },
+  "private": false,
+  "dependencies": {},
+  "peerDependencies": {
+    "react-photo-gallery": "^6.3.0"
+  },
+  "devDependencies": {
+    "react-photo-gallery": "^6.3.0"
+  }
+}
