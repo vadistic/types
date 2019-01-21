@@ -28,23 +28,21 @@ export default (async () => {
         typeof nextPkg[field] === 'string'
           ? nextPkg[field].replace(PLACEHOLDER_NAME, name)
           : nextPkg[field]
-    }
-    // copy rest
-    else {
+    } else {
       nextPkg[field] = prevPkg[field]
     }
   })
 
   // sync peerDeps to DevDeeps
-  nextPkg['peerDependencies'] = nextPkg['devDependencies']
+  nextPkg.peerDependencies = nextPkg.devDependencies
 
   // copy dependencies
-  nextPkg['dependencies'] = prevPkg['dependencies']
+  nextPkg.dependencies = prevPkg.dependencies
 
   // why only sync pretty-print ??
   json.writeFileSync(path.resolve('./package.json'), nextPkg, {
     spaces: 2,
   })
 
-  console.log(`Synced: ${prevPkg['name']}`)
+  console.log(`Synced: ${nextPkg.name}`)
 })()
