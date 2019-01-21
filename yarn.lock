@@ -1423,9 +1423,9 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
-"@types/grommet-icons@https://github.com/vadistic/types#types-grommet-icons-v4.1.0-0-gitpkg":
-  version "4.1.0-0"
-  resolved "https://github.com/vadistic/types#b0b7d68f73ae53ddb3f50690a9a3f240d3212a6d"
+"@types/grommet-icons@https://github.com/vadistic/types#types-grommet-icons-v4.1.0-1-gitpkg":
+  version "4.1.0-1"
+  resolved "https://github.com/vadistic/types#ae3ef114ec80845ddf44864e5addc4b8793c2b19"
 
 "@types/history@*":
   version "4.7.2"
@@ -11771,9 +11771,14 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-"types-util@https://github.com/vadistic/types#types-util-v0.1.1-gitpkg":
-  version "0.1.1"
-  resolved "https://github.com/vadistic/types#d2f4a086103bafe2701206bd5ce258e6e6e963dc"
+"types-util@https://github.com/vadistic/types#types-util-v0.1.2-gitpkg":
+  version "0.1.2"
+  resolved "https://github.com/vadistic/types#44b5cbd8e3a2752e588676063e8b491791ac0b3e"
+
+types-util@vadistic/types#types-util-v0.1.2-gitpkg:
+  version "0.1.2"
+  uid "44b5cbd8e3a2752e588676063e8b491791ac0b3e"
+  resolved "https://codeload.github.com/vadistic/types/tar.gz/44b5cbd8e3a2752e588676063e8b491791ac0b3e"
 
 typescript@^3.2.4:
   version "3.2.4"
