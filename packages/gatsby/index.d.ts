@@ -1,5 +1,5 @@
 declare module 'gatsby' {
-  import React from 'react'
+  import * as React from 'react'
 
   export {
     default as Link,

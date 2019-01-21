@@ -1,37 +1,41 @@
 // TypeScript Version: 3.0
 
+/// <reference path="./themes.d.ts"/>
+
 import * as React from 'react'
 
-import { base as iconBase } from 'grommet-icons/themes'
+import { IconBaseTheme } from 'grommet-icons/themes'
 import { FilterObjectKeys } from 'types-util'
 
 declare module 'grommet-icons' {
   // Themable type values
-  type IconTheme = typeof iconBase
-
-  type ColorNames<T extends IconTheme = IconTheme> = FilterObjectKeys<
+  type ColorNames<T extends IconBaseTheme = IconBaseTheme> = FilterObjectKeys<
     T['global']['colors'],
     string
   >
 
-  type ColorValue<T extends IconTheme = IconTheme> =
+  type ColorValue<T extends IconBaseTheme = IconBaseTheme> =
     | ColorNames<T>
     | {
         dark?: ColorNames<T>
         light?: ColorNames<T>
       }
 
-  type ColorProp<T extends IconTheme = IconTheme> = keyof T['global']['colors']
+  type ColorProp<
+    T extends IconBaseTheme = IconBaseTheme
+  > = keyof T['global']['colors']
 
-  type IconSizeProp<T extends IconTheme = IconTheme> = keyof T['icon']['size']
+  type IconSizeProp<
+    T extends IconBaseTheme = IconBaseTheme
+  > = keyof T['icon']['size']
 
-  interface IconProps<T extends IconTheme = IconTheme> {
+  interface IconProps<T extends IconBaseTheme = IconBaseTheme> {
     a11yTitle?: string
     size?: IconSizeProp<T>
     color?: ColorProp<T>
   }
 
-  type IconI<T extends IconTheme = IconTheme> = React.ComponentType<
+  type IconI<T extends IconBaseTheme = IconBaseTheme> = React.ComponentType<
     IconProps<T> & JSX.IntrinsicElements['svg']
   >
 
@@ -581,7 +585,9 @@ declare module 'grommet-icons' {
   const Youtube: IconI
   const ZoomIn: IconI
   const ZoomOut: IconI
-  const base: IconI
-  const defaultProps: IconI
-  const extendDefaultTheme: IconI
+
+  // TODO: type icon utils
+  const base: any
+  const defaultProps: any
+  const extendDefaultTheme: any
 }

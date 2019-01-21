@@ -1,11 +1,11 @@
 // TypeScript Version: 3.0
 
 declare module 'grommet/themes' {
-  import { base as iconBase } from 'grommet-icons/themes'
+  import { IconBaseTheme } from 'grommet-icons/themes'
   const grommet: object
   const dark: object
 
-  type IconBase = typeof iconBase
+  type BaseTheme = typeof base
 
   const colors: {
     active: string
@@ -65,7 +65,7 @@ declare module 'grommet/themes' {
   function generate(
     baseSpacing?: number,
     scale?: number,
-  ): IconBase & {
+  ): IconBaseTheme & {
     global: {
       animation: {
         duration: string
@@ -816,7 +816,7 @@ declare module 'grommet/themes' {
     }
   }
 
-  const base: IconBase & {
+  const base: IconBaseTheme & {
     global: {
       animation: {
         duration: string

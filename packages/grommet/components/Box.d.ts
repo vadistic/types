@@ -1,14 +1,15 @@
 import * as React from 'react'
 
+import { BaseTheme } from 'grommet/themes'
+
 import {
   AlignSelfValue,
+  AllProps,
   BorderSizeValue,
   ColorValue,
-  CssAndIntristicProps,
   EdgeSizeValue,
   ElevationValue,
   SizeValue,
-  Theme,
 } from '../shared'
 
 export type BoxRoundSizeValue<T> = EdgeSizeValue<T> | boolean | 'full'
@@ -74,7 +75,7 @@ export type BoxBorderStyleValue =
 
 export type BoxOverflowValue = 'auto' | 'hidden' | 'scroll' | 'visible'
 
-export interface BoxProps<T = Theme> {
+export interface BoxProps<T = BaseTheme> {
   a11yTitle?: string
   alignSelf?: AlignSelfValue
   gridArea?: string
@@ -134,7 +135,7 @@ export interface BoxProps<T = Theme> {
       }
   responsive?: boolean
   round?:
-    | BoxRoundSizeValue
+    | BoxRoundSizeValue<T>
     | {
         corner?:
           | 'top'
@@ -145,7 +146,7 @@ export interface BoxProps<T = Theme> {
           | 'top-right'
           | 'bottom-left'
           | 'bottom-right'
-        size?: BoxRoundSizeValue
+        size?: BoxRoundSizeValue<T>
       }
   tag?: string
   as?: string
@@ -153,7 +154,7 @@ export interface BoxProps<T = Theme> {
   wrap?: boolean
 }
 
-export type BoxI<T = Theme> = React.ComponentType<
-  CssAndIntristicProps<BoxProps, T, 'button'>
+export type BoxI<T = BaseTheme> = React.ComponentType<
+  AllProps<BoxProps, T, 'div'>
 >
-export const Button: BoxI
+export const Box: BoxI

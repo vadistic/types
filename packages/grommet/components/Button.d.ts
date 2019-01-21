@@ -1,14 +1,10 @@
 // TypeScript Version: 3.0
 import * as React from 'react'
 
-import {
-  AlignSelfValue,
-  CssAndIntristicProps,
-  EdgeSizeValue,
-  Theme,
-} from '../shared'
+import { BaseTheme } from 'grommet/themes'
+import { AlignSelfValue, AllProps, ColorValue, EdgeSizeValue } from '../shared'
 
-export interface ButtonProps<T = Theme> {
+export interface ButtonProps<T = BaseTheme> {
   a11yTitle?: string
   alignSelf?: AlignSelfValue
   gridArea?: string
@@ -23,7 +19,7 @@ export interface ButtonProps<T = Theme> {
         vertical?: EdgeSizeValue<T>
       }
   active?: boolean
-  color?: string | { dark?: string; light?: string }
+  color?: ColorValue<T>
   disabled?: boolean
   fill?: boolean
   focusIndicator?: boolean
@@ -43,7 +39,7 @@ export interface ButtonProps<T = Theme> {
   as?: string
 }
 
-export type ButtonI<T = Theme> = React.ComponentType<
-  CssAndIntristicProps<ButtonProps, T, 'button'>
+export type ButtonI<T = BaseTheme> = React.ComponentType<
+  AllProps<ButtonProps, T, 'button'>
 >
 export const Button: ButtonI

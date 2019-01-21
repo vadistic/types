@@ -1,10 +1,10 @@
 declare module 'react-photo-gallery' {
-  import React from 'react'
+  import * as React from 'react'
 
   /**
    * Photos array item properties (passed into Gallery's photos property)
    */
-  export type PhotoProps<CustomPhotoProps extends object = unknown> = {
+  export type PhotoProps<CustomPhotoProps extends {} = {}> = {
     /**
      * the img src attribute value of the image
      */
@@ -45,9 +45,7 @@ declare module 'react-photo-gallery' {
   /**
    * If you're passing a function component to ImageComponent you will receive back these props:
    */
-  export interface ImageComponentProps<
-    CustomPhotoProps extends object = unknown
-  > {
+  export interface ImageComponentProps<CustomPhotoProps extends {} = {}> {
     /**
      * margin prop optionally passed into Gallery by user
      */
@@ -68,7 +66,7 @@ declare module 'react-photo-gallery' {
     left?: number
   }
 
-  export type PhotoClickHandler<CustomPhotoProps extends object = unknown> = (
+  export type PhotoClickHandler<CustomPhotoProps extends {} = {}> = (
     event: React.MouseEvent,
     photos: {
       index: number
@@ -78,7 +76,7 @@ declare module 'react-photo-gallery' {
     },
   ) => void
 
-  export interface GalleryProps<CustomPhotoProps extends object = unknown> {
+  export interface GalleryProps<CustomPhotoProps extends {} = {}> {
     photos: Array<PhotoProps<CustomPhotoProps>>
     /**
      * number of photos per row or a function which receives the container width
@@ -105,10 +103,10 @@ declare module 'react-photo-gallery' {
   }
 
   export type GalleryI<
-    CustomPhotoProps extends object = unknown
+    CustomPhotoProps extends object = {}
   > = React.ComponentClass<GalleryProps<CustomPhotoProps>>
 
-  declare const Gallery: GalleryI
+  export const Gallery: GalleryI
 
   export default Gallery
 }

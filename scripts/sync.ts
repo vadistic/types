@@ -10,11 +10,13 @@ const PKG_IGNORE_FILEDS = [
 ]
 const PLACEHOLDER_NAME = 'package_name'
 
-export default (async () => {
+const PACKAGE_TEMPLATE_PATH = '../../templates/package.json'
+const TSCONFIG_TEMPLATE_PATH = '../../templates/tsconfig.json'
+const TSLINT_TEMPLATE_PATH = '../../templates/tslint.json'
+
+export default (() => {
   const prevPkg = json.readFileSync(path.resolve('./package.json'))
-  const nextPkg = json.readFileSync(
-    path.resolve('../../templates/package.json'),
-  )
+  const nextPkg = json.readFileSync(path.resolve(PACKAGE_TEMPLATE_PATH))
 
   // check if dirname is in sync with pkg name
   const name = path.basename(process.cwd())
@@ -49,6 +51,35 @@ export default (async () => {
 
   // why only sync pretty-print ??
   json.writeFileSync(path.resolve('./package.json'), nextPkg, {
+    spaces: 2,
+  })
+
+  // sync tsconfig.json
+  const tsconfigTemplate = json.readFileSync(
+    path.resolve(TSCONFIG_TEMPLATE_PATH),
+  )
+
+  let tsconfig
+  try {
+    tsconfig = json.readFileSync(path.resolve('./tsconfig.json'))
+  } catch {
+    // in case of no file
+    tsconfig = tsconfigTemplate
+  }
+
+  // sync compilerOptions, but keep paths
+  tsconfig.compilerOptions = {
+    paths: tsconfig.compilerOptions.paths,
+    ...tsconfigTemplate.compilerOptions,
+  }
+
+  json.writeFileSync(path.resolve('./tsconfig.json'), tsconfig, {
+    spaces: 2,
+  })
+
+  // overwrite tslint.json
+  const tslint = json.readFileSync(path.resolve(TSLINT_TEMPLATE_PATH))
+  json.writeFileSync(path.resolve('./tslint.json'), tslint, {
     spaces: 2,
   })
 

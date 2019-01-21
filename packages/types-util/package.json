@@ -11,7 +11,8 @@
   "private": false,
   "scripts": {
     "gitpkg": "../../node_modules/.bin/gitpkg publish",
-    "bump": "ts-node ../../scripts/bump-util"
+    "bump": "ts-node ../../scripts/bump-util",
+    "install": "../../node_modules/.bin/lerna link"
   },
   "peerDependencies": {
     "typescript": ">= 3.0.0"

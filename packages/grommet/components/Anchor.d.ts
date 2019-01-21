@@ -1,9 +1,11 @@
 import * as React from 'react'
 
-import { AlignSelfValue, ColorValue, EdgeSizeValue, Theme } from '../shared'
+import { BaseTheme } from 'grommet/themes'
+
+import { AlignSelfValue, AllProps, ColorValue, EdgeSizeValue } from '../shared'
 import { TextSize } from './Text'
 
-export interface AnchorProps<T = Theme> {
+export interface AnchorProps<T = BaseTheme> {
   a11yTitle?: string
   alignSelf?: AlignSelfValue
   gridArea?: string
@@ -27,8 +29,8 @@ export interface AnchorProps<T = Theme> {
   as?: string
 }
 
-export type AnchorI<T = Theme> = React.ComponentType<
-  CssAndIntristicProps<AnchorProps, T, 'a'>
+export type AnchorI<T = BaseTheme> = React.ComponentType<
+  AllProps<AnchorProps, T, 'a'>
 >
 
 export const Anchor: AnchorI

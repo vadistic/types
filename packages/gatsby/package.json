@@ -12,14 +12,14 @@
     "sync": "ts-node ../../scripts/sync",
     "bump": "ts-node ../../scripts/bump-type",
     "gitpkg": "../../node_modules/.bin/gitpkg publish",
-    "install": "../../node_modules/.bin/lerna link",
-    "lint": "../../node_modules/.bin/dtslint --stream --onlyTestTsNext"
+    "lint": "../../node_modules/.bin/dtslint --onlyTestTsNext"
   },
   "private": false,
   "peerDependencies": {
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
     "gatsby": "^2.0.91",
+    "gatsby-link": "^2.0.8",
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1",
     "tslint-config-prettier": "^1.17.0",
@@ -29,6 +29,7 @@
     "@types/react": "^16.7.20",
     "@types/react-dom": "^16.0.11",
     "gatsby": "^2.0.91",
+    "gatsby-link": "^2.0.8",
     "react": "^16.8.0-alpha.1",
     "react-dom": "^16.8.0-alpha.1",
     "tslint-config-prettier": "^1.17.0",

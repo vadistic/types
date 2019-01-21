@@ -1,16 +1,17 @@
 import * as React from 'react'
 
+import { BaseTheme } from 'grommet/themes'
 import {
   AlignSelfValue,
+  AllProps,
   ColorValue,
-  CssAndIntristicProps,
   EdgeSizeValue,
-  Theme,
+  StringIndexed,
 } from '../shared'
 
-export type TextSize<T = Theme> = keyof T['text']
+export type TextSize<T = BaseTheme> = keyof StringIndexed<T>['text']
 
-export interface TextProps<T = Theme> {
+export interface TextProps<T = BaseTheme> {
   a11yTitle?: string
   alignSelf?: AlignSelfValue
   gridArea?: string
@@ -33,8 +34,8 @@ export interface TextProps<T = Theme> {
   weight?: 'normal' | 'bold' | number
 }
 
-export type TextI<T = Theme> = React.ComponentType<
-  CssAndIntristicProps<TextProps, T, 'span'>
+export type TextI<T = BaseTheme> = React.ComponentType<
+  AllProps<TextProps, T, 'span'>
 >
 
 export const Text: TextI

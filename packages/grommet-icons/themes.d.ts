@@ -16,4 +16,6 @@ declare module 'grommet-icons/themes' {
       }
     }
   }
+
+  type IconBaseTheme = typeof base
 }

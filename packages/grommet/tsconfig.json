@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
+    "paths": {
+      "grommet": ["."]
+    },
     "module": "commonjs",
     "target": "es6",
-    "lib": [
-      "es2016",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2016", "es2017", "dom"],
     "baseUrl": ".",
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -21,5 +20,14 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
-  }
+  },
+  "include": [
+    "index.d.ts",
+    "themes.d.ts",
+    "utils.d.ts",
+    "shared.d.ts",
+    "components/*.ts",
+    "test/*"
+  ],
+  "exclude": ["node_modules/*"]
 }

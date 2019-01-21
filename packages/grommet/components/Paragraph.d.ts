@@ -1,10 +1,17 @@
 import * as React from 'react'
 
-import { AlignSelfValue, ColorValue, EdgeSizeValue, Theme } from '../shared'
+import { BaseTheme } from 'grommet/themes'
+import {
+  AlignSelfValue,
+  AllProps,
+  ColorValue,
+  EdgeSizeValue,
+  StringIndexed,
+} from '../shared'
 
-export type ParagraphSize<T = Theme> = keyof T['paragraph']
+export type ParagraphSize<T = BaseTheme> = keyof StringIndexed<T>['paragraph']
 
-export interface ParagraphProps<T = Theme> {
+export interface ParagraphProps<T = BaseTheme> {
   a11yTitle?: string
   alignSelf?: AlignSelfValue
   gridArea?: string
@@ -24,8 +31,8 @@ export interface ParagraphProps<T = Theme> {
   textAlign?: 'start' | 'center' | 'end'
 }
 
-export type ParagraphI<T = Theme> = React.ComponentType<
-  CssAndIntristicProps<ParagraphProps, T, 'p'>
+export type ParagraphI<T = BaseTheme> = React.ComponentType<
+  AllProps<ParagraphProps, T, 'p'>
 >
 
 export const Paragraph: ParagraphI

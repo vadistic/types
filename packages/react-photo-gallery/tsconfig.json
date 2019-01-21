@@ -1,12 +1,8 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "es6",
     "target": "es6",
-    "lib": [
-      "es2016",
-      "es2017",
-      "dom"
-    ],
+    "lib": ["es2016", "es2017", "dom"],
     "baseUrl": ".",
     "alwaysStrict": true,
     "noImplicitAny": true,
@@ -21,5 +17,6 @@
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "skipDefaultLibCheck": true
-  }
+  },
+  "files": ["index.d.ts"]
 }

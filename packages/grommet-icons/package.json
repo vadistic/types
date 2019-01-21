@@ -12,8 +12,7 @@
     "sync": "ts-node ../../scripts/sync",
     "bump": "ts-node ../../scripts/bump-type",
     "gitpkg": "../../node_modules/.bin/gitpkg publish",
-    "install": "../../node_modules/.bin/lerna link",
-    "lint": "../../node_modules/.bin/dtslint --stream --onlyTestTsNext"
+    "lint": "../../node_modules/.bin/dtslint --onlyTestTsNext"
   },
   "private": false,
   "dependencies": {
