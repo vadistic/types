@@ -2,7 +2,12 @@
 import * as json from 'jsonfile'
 import * as path from 'path'
 
-const PKG_IGNORE_FILEDS = ['version', 'devDependencies', 'peerDependencies']
+const PKG_IGNORE_FILEDS = [
+  'version',
+  'devDependencies',
+  'peerDependencies',
+  'dependencies',
+]
 const PLACEHOLDER_NAME = 'package_name'
 
 export default (async () => {
@@ -38,6 +43,9 @@ export default (async () => {
 
   // copy dependencies
   nextPkg.dependencies = prevPkg.dependencies
+
+  // copy version
+  nextPkg.version = prevPkg.version
 
   // why only sync pretty-print ??
   json.writeFileSync(path.resolve('./package.json'), nextPkg, {

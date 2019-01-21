@@ -1,7 +1,3 @@
 {
-  "extends": [
-    "tslint:recommended",
-    "tslint-config-prettier",
-    "../../tslint.json"
-  ]
+  "extends": ["tslint:recommended", "tslint-config-prettier", "../tslint.json"]
 }
