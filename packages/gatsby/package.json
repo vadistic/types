@@ -11,7 +11,9 @@
   "scripts": {
     "sync": "ts-node ../../scripts/sync",
     "bump": "ts-node ../../scripts/bump-type",
-    "gitpkg": "../../node_modules/.bin/gitpkg publish"
+    "gitpkg": "../../node_modules/.bin/gitpkg publish",
+    "install": "../../node_modules/.bin/lerna link",
+    "lint": "../../node_modules/.bin/dtslint --stream --onlyTestTsNext"
   },
   "private": false,
   "peerDependencies": {

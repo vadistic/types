@@ -4476,10 +4476,9 @@ dotenv@^4.0.0:
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
   integrity sha1-hk7xN5rO1Vzm+V3r7NzhefegzR0=
 
-dtslint@^0.4.2:
+dtslint@vadistic/dtslint#dtslint-v0.4.2-gitpkg:
   version "0.4.2"
-  resolved "https://registry.yarnpkg.com/dtslint/-/dtslint-0.4.2.tgz#048f75d6d847215d2af8f2f54b0c3858f2db8f03"
-  integrity sha512-ph4GXLw3HYzlQMJOFcpCqWHuL3MxJ/344OR7wn0wlQGchQGTIVNsSUl8iKEMatpy2geNMysgA9fQa6xVhHOkTQ==
+  resolved "https://codeload.github.com/vadistic/dtslint/tar.gz/cf1239e13179bece19ed01bda50c7c91ca4d5c5b"
   dependencies:
     definitelytyped-header-parser "github:Microsoft/definitelytyped-header-parser#production"
     fs-extra "^6.0.1"
@@ -11704,6 +11703,13 @@ tslint-config-prettier@^1.17.0:
   resolved "https://registry.yarnpkg.com/tslint-config-prettier/-/tslint-config-prettier-1.17.0.tgz#946ed6117f98f3659a65848279156d87628c33dc"
   integrity sha512-NKWNkThwqE4Snn4Cm6SZB7lV5RMDDFsBwz6fWUkTxOKGjMx8ycOHnjIbhn7dZd5XmssW3CwqUjlANR6EhP9YQw==
 
+tslint-react@^3.6.0:
+  version "3.6.0"
+  resolved "https://registry.yarnpkg.com/tslint-react/-/tslint-react-3.6.0.tgz#7f462c95c4a0afaae82507f06517ff02942196a1"
+  integrity sha512-AIv1QcsSnj7e9pFir6cJ6vIncTqxfqeFF3Lzh8SuuBljueYzEAtByuB6zMaD27BL0xhMEqsZ9s5eHuCONydjBw==
+  dependencies:
+    tsutils "^2.13.1"
+
 tslint@^5.12.0, tslint@^5.12.1:
   version "5.12.1"
   resolved "https://registry.yarnpkg.com/tslint/-/tslint-5.12.1.tgz#8cec9d454cf8a1de9b0a26d7bdbad6de362e52c1"
@@ -11722,7 +11728,7 @@ tslint@^5.12.0, tslint@^5.12.1:
     tslib "^1.8.0"
     tsutils "^2.27.2"
 
-tsutils@^2.27.2:
+tsutils@^2.13.1, tsutils@^2.27.2:
   version "2.29.0"
   resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.29.0.tgz#32b488501467acbedd4b85498673a0812aca0b99"
   integrity sha512-g5JVHCIJwzfISaXpXE1qvNalca5Jwob6FjI4AoPlqMusJ6ftFE7IkkFoMhVLRgK+4Kx3gkzb8UZK5t5yTTvEmA==
@@ -11777,7 +11783,6 @@ typedarray@^0.0.6:
 
 types-util@vadistic/types#types-util-v0.1.2-gitpkg:
   version "0.1.2"
-  uid "44b5cbd8e3a2752e588676063e8b491791ac0b3e"
   resolved "https://codeload.github.com/vadistic/types/tar.gz/44b5cbd8e3a2752e588676063e8b491791ac0b3e"
 
 typescript@^3.2.4:

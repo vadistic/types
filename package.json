@@ -9,7 +9,8 @@
   "main": "n/a",
   "private": true,
   "scripts": {
-    "sync": "ts-node ./scripts/sync.ts"
+    "sync": "lerna run sync",
+    "lint": "lerna run lint"
   },
   "workspaces": [
     "packages/*"
@@ -17,7 +18,7 @@
   "devDependencies": {
     "@types/jsonfile": "^5.0.0",
     "@types/semver": "^5.5.0",
-    "dtslint": "^0.4.2",
+    "dtslint": "vadistic/dtslint#dtslint-v0.4.2-gitpkg",
     "gitpkg": "^1.0.0-beta.1",
     "husky": "^1.3.1",
     "jsonfile": "^5.0.0",
@@ -26,7 +27,8 @@
     "prettier": "^1.16.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.12.1",
-    "tslint-config-prettier": "^1.17.0"
+    "tslint-config-prettier": "^1.17.0",
+    "tslint-react": "^3.6.0"
   },
   "husky": {
     "hooks": {

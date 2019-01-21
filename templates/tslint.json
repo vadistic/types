@@ -1,8 +1,8 @@
 {
-  "extends": [
-    "dtslint/dtslint.json",
-    "tslint:recommended",
-    "tslint-config-prettier",
-    "../../tslint.json"
-  ]
+  "extends": ["dtslint/dtslint.json", "tslint-react", "tslint-config-prettier"],
+  "rules": {
+    "no-single-declare-module": false,
+    "ordered-imports": true,
+    "interface-name": [true, "never-prefix"]
+  }
 }

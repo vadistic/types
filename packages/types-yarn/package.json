@@ -16,7 +16,8 @@
     "node-bin": "node ./dist/types-yarn",
     "build": "rm -rf dist && yarn tsc",
     "gitpkg": "../../node_modules/.bin/gitpkg publish",
-    "bump": "ts-node ../../scripts/bump-util"
+    "bump": "ts-node ../../scripts/bump-util",
+    "install": "../../node_modules/.bin/lerna link"
   },
   "dependencies": {
     "@octokit/rest": "^16.10.0",
