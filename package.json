@@ -1,0 +1,35 @@
+{
+  "name": "@types/grommet-icons",
+  "version": "4.1.0-2",
+  "description": "My typescript definitions for `grommet-icons` package",
+  "repository": "https://github.com/vadistic/types/packages/grommet-icons",
+  "homepage": "https://github.com/vadistic/types/tree/master/packages/grommet-icons#readme",
+  "author": "Jakub Wadas <vadistic@gmail.com>",
+  "license": "MIT",
+  "main": "index.d.ts",
+  "types": "index.d.ts",
+  "scripts": {
+    "sync": "ts-node ../../scripts/sync",
+    "bump": "ts-node ../../scripts/bump-type",
+    "gitpkg": "../../node_modules/.bin/gitpkg publish",
+    "lint": "../../node_modules/.bin/dtslint --onlyTestTsNext"
+  },
+  "private": false,
+  "dependencies": {
+    "types-util": "vadistic/types#types-util-v0.1.2-gitpkg"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "grommet-icons": "^4.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "grommet-icons": "^4.1.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  }
+}
